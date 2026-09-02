@@ -7,53 +7,83 @@
   <meta name="description" content="Money Tox compare Crown Slots, Evo Spin et Neo Spin. 18+ • Jeu responsable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       background: #05070a;
       color: #f4f6f8;
-      font-family: "DM Sans", Arial, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       line-height: 1.5;
     }
     a { color: inherit; text-decoration: none; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
     .wrap { width: min(1180px, calc(100% - 40px)); margin: auto; }
+    .giveaway {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 16px;
+      background: #16100a;
+      border-bottom: 1px solid rgba(251, 191, 36, .35);
+    }
+    .giveaway p {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin: 0;
+      max-width: 70%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .giveaway .btn {
+      background: #fbbf24;
+      color: #111;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      height: auto;
+    }
+    .giveaway .btn:hover { background: #f59e0b; }
     header {
       position: fixed;
       inset: 0 0 auto;
-      height: 72px;
       z-index: 100;
       background: rgba(5, 7, 10, .82);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .header-inner {
-      height: 100%;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: Syne, sans-serif;
-      font-size: 17px;
-      font-weight: 800;
+      font-family: Oswald, Inter, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: .04em;
     }
-    .mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: #1677ff;
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 13px;
-      font-weight: 800;
+    .logo span {
+      background: linear-gradient(105deg, #9ad0ff 0%, #1677ff 45%, #5aaeff 72%, #0a63f0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .logo span { color: #1677ff; }
     nav { display: flex; gap: 32px; color: #8b95a4; font-size: 14px; }
     nav a:hover { color: #fff; }
     .btn {
@@ -87,26 +117,6 @@
       font-size: 20px;
       cursor: pointer;
     }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 180px 20px 110px;
-      text-align: center;
-    }
-    .hero:before {
-      content: "";
-      position: absolute;
-      width: 640px;
-      height: 420px;
-      left: 50%;
-      top: 90px;
-      transform: translateX(-50%);
-      background: #1677ff;
-      opacity: .2;
-      filter: blur(140px);
-      border-radius: 50%;
-    }
-    .hero-inner { position: relative; max-width: 760px; margin: auto; }
     .kicker {
       color: #1677ff;
       font-size: 11px;
@@ -114,61 +124,118 @@
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    h1, h2, h3 { font-family: Syne, sans-serif; font-weight: 800; letter-spacing: -1px; }
-    h1 { margin-top: 18px; font-size: clamp(44px, 8vw, 72px); line-height: .95; }
+    h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; }
+    h1 { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; }
     h1 span { color: #1677ff; }
-    .lead {
-      max-width: 560px;
-      margin: 22px auto 0;
-      color: #8b95a4;
-      font-size: 18px;
-    }
-    .actions { margin-top: 28px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .note { margin-top: 18px; color: #8b95a4; font-size: 12px; }
     section { padding: 90px 0; }
     h2 { margin-top: 8px; font-size: clamp(28px, 5vw, 46px); }
     .muted { margin-top: 10px; color: #8b95a4; max-width: 560px; }
-    .cards { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    #casinos { padding: 148px 0 60px; }
     .card {
-      background: #0d1219;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 20px;
-      padding: 24px;
+      --brand: #1677ff;
+      --light: #7db4ff;
+      --btn: #1677ff;
+      position: relative;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
+      background:
+        radial-gradient(120% 70% at 50% -10%, color-mix(in srgb, var(--brand) 11%, transparent) 0%, transparent 55%),
+        linear-gradient(180deg, #17131f 0%, #100d17 100%);
+      box-shadow: 0 12px 44px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
+      transition: transform .2s;
     }
-    .card.featured {
-      border-color: rgba(22,119,255,.5);
-      box-shadow: 0 0 70px rgba(22,119,255,.12);
+    .card:hover { transform: translateY(-6px); }
+    .card.violet { --brand: #a855f7; --light: #d8b4fe; --btn: #7c3aed; }
+    .card.blue { --brand: #1677ff; --light: #7db4ff; --btn: #1677ff; }
+    .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
+    .card-bar {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--brand), var(--light), var(--brand), transparent);
     }
-    .badge {
-      display: inline-block;
-      background: #1677ff;
-      color: #fff;
-      padding: 4px 10px;
+    .card-body { display: flex; flex-direction: column; gap: 16px; padding: 22px; flex: 1; }
+    .card-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .card h3 { font-size: 20px; }
+    .stars { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: #8b95a4; font-size: 11px; font-weight: 600; }
+    .stars b { color: var(--brand); letter-spacing: 1px; }
+    .rank {
       border-radius: 999px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--light);
+      background: color-mix(in srgb, var(--brand) 12%, transparent);
+      border: 1px solid color-mix(in srgb, var(--brand) 29%, transparent);
     }
-    .top { display: flex; justify-content: space-between; gap: 16px; }
-    .highlight { margin-top: 4px; color: #1677ff; font-size: 14px; }
-    .rating {
-      background: rgba(255,255,255,.05);
-      border-radius: 12px;
-      padding: 8px 12px;
+    .offer {
       text-align: center;
-      height: fit-content;
+      border-radius: 16px;
+      padding: 16px 14px;
+      background: radial-gradient(90% 120% at 50% 0%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 70%);
+      border: 1px solid color-mix(in srgb, var(--brand) 13%, transparent);
     }
-    .rating strong { display: block; font-size: 18px; }
-    .rating small { color: #8b95a4; font-size: 10px; }
-    .summary { margin-top: 14px; color: #8b95a4; font-size: 14px; }
-    .features { list-style: none; margin: 18px 0 22px; font-size: 14px; }
-    .features li { margin: 10px 0; }
-    .features li:before { content: "✓ "; color: #1677ff; font-weight: 800; }
-    .card .btn { width: 100%; margin-top: auto; }
+    .offer strong {
+      display: block;
+      font-family: Oswald, Inter, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      background: linear-gradient(135deg, #fff 16%, var(--light) 68%, var(--brand));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .offer p { margin-top: 10px; color: rgba(255,255,255,.55); font-size: 13px; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .chips span {
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--light);
+      background: color-mix(in srgb, var(--brand) 9%, transparent);
+      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
+    }
+    .tp {
+      margin-top: auto;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: color-mix(in srgb, var(--brand) 6%, transparent);
+      border: 1px solid color-mix(in srgb, var(--brand) 15%, transparent);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--light);
+    }
+    .tp em { color: #fff; font-style: normal; font-size: 14px; font-weight: 900; }
+    .card .btn {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 52px;
+      background: var(--btn);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .card .btn:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
+      transform: translateX(-120%);
+      animation: sheen 2.8s ease-in-out infinite;
+    }
+    @keyframes sheen {
+      0%, 55% { transform: translateX(-120%); }
+      100% { transform: translateX(120%); }
+    }
     .compare { background: #080b10; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
     .table { margin-top: 32px; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; overflow: hidden; }
     .row {
@@ -187,6 +254,8 @@
       text-transform: uppercase;
     }
     .row .btn { padding: 8px 12px; font-size: 12px; width: fit-content; }
+    .row.violet .btn { background: #7c3aed; }
+    .row.green .btn { background: #16a34a; }
     .why { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .why article {
       background: #0d1219;
@@ -224,7 +293,7 @@
     .faq-a { display: none; color: #8b95a4; font-size: 15px; padding: 0 0 18px; }
     .faq-item.open .faq-a { display: block; }
     .arrow { color: #1677ff; }
-    .legal { display: none; padding: 140px 0 80px; max-width: 680px; }
+    .legal { display: none; padding: 180px 0 80px; max-width: 680px; }
     .legal h1 { font-size: 40px; }
     .legal p, .legal li { margin-top: 14px; color: #8b95a4; }
     .legal h2 { margin-top: 28px; font-size: 22px; }
@@ -234,11 +303,11 @@
     .foot p { margin-top: 12px; max-width: 380px; color: #8b95a4; font-size: 13px; }
     .flinks { display: grid; grid-template-columns: repeat(2, auto); gap: 10px 36px; color: #8b95a4; font-size: 13px; }
     .flinks a:hover { color: #fff; }
-    .copy { border-top: 1px solid rgba(255,255,255,.08); margin-top: 36px; padding-top: 16px; color: #8b95a4; font-size: 11px; }
+    .copy { border-top: 1px solid rgba(255,255,255,.08); margin-top: 36px; padding-top: 16px; color: #8b95a4; font-size: 11px; text-align: center; }
     .mobile-nav {
       display: none;
       position: fixed;
-      inset: 72px 0 0;
+      inset: 120px 0 0;
       background: #0d1219;
       z-index: 90;
       padding: 20px;
@@ -257,9 +326,12 @@
 </head>
 <body>
 <header>
+  <div class="giveaway">
+    <p>200 € à gagner tous les dimanches à 20h</p>
+    <a class="btn" href="#casinos">Participer</a>
+  </div>
   <div class="wrap header-inner">
-    <a href="#top" class="logo" data-home>
-      <span class="mark">MT</span>
+    <a href="#casinos" class="logo" data-home>
       MONEY <span>TOX</span>
     </a>
     <nav>
@@ -267,7 +339,7 @@
       <a href="#comparatif">Comparatif</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#casinos" class="btn header-cta">Voir la sélection</a>
+    <a href="#comparatif" class="btn header-cta">Comparatif</a>
     <button class="menu-btn" type="button" aria-label="Menu" id="menuBtn">☰</button>
   </div>
 </header>
@@ -282,74 +354,78 @@
 </div>
 
 <div id="home">
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <p class="kicker">Sélection courte · 18+</p>
-      <h1>Trois casinos.<br><span>Pas une usine à listes.</span></h1>
-      <p class="lead">Money Tox compare Crown Slots, Evo Spin et Neo Spin : ce qui change vraiment, pas un copier-coller d’« offre de bienvenue ».</p>
-      <div class="actions">
-        <a href="#casinos" class="btn">Voir la sélection ↓</a>
-        <a href="#comparatif" class="btn ghost">Tableau comparatif</a>
-      </div>
-      <p class="note">18+ · Jeu responsable · Liens affiliés indiqués</p>
-    </div>
-  </section>
-
   <section id="casinos">
     <div class="wrap">
-      <p class="kicker">Sélection</p>
-      <h2>Les trois opérateurs retenus</h2>
-      <p class="muted">Notes éditoriales Money Tox. L’offre exacte et les conditions sont chez l’opérateur — on n’invente pas les montants.</p>
+      <h1 class="sr-only">Money Tox</h1>
       <div class="cards">
-        <article class="card featured">
-          <span class="badge">Choix n°1</span>
-          <div class="top">
-            <div>
-              <h3>Crown Slots</h3>
-              <p class="highlight">Retraits rapides, catalogue large</p>
+        <article class="card violet">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <div class="card-head">
+              <div>
+                <h3>Crown Slots</h3>
+                <div class="stars"><b>★★★☆☆</b> 3,4/5</div>
+              </div>
+              <span class="rank">#1</span>
             </div>
-            <div class="rating"><strong>9.8</strong><small>/10</small></div>
+            <div class="offer">
+              <strong>Retraits rapides, catalogue large</strong>
+              <p>Le plus équilibré de la sélection : jeux nombreux, parcours simple, et une offre d’arrivée claire.</p>
+            </div>
+            <div class="chips">
+              <span>Retraits souvent sous 24 h</span>
+              <span>Slots, live et jackpots</span>
+              <span>Parcours mobile propre</span>
+            </div>
+            <div class="tp"><span>Trustpilot</span><em>3,4 / 5</em></div>
+            <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
-          <p class="summary">Le plus équilibré de la sélection : jeux nombreux, parcours simple, et une offre d’arrivée claire.</p>
-          <ul class="features">
-            <li>Retraits souvent traités sous 24 h</li>
-            <li>Slots, live et jackpots au même endroit</li>
-            <li>Parcours mobile propre</li>
-          </ul>
-          <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
         </article>
-        <article class="card">
-          <span class="badge">Populaire</span>
-          <div class="top">
-            <div>
-              <h3>Evo Spin</h3>
-              <p class="highlight">Catalogue dense, paiements propres</p>
+        <article class="card green">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <div class="card-head">
+              <div>
+                <h3>Neo Spin</h3>
+                <div class="stars"><b>★★★★☆</b> 3,8/5</div>
+              </div>
+              <span class="rank">#2</span>
             </div>
-            <div class="rating"><strong>9.5</strong><small>/10</small></div>
+            <div class="offer">
+              <strong>Interface moderne, tables live</strong>
+              <p>Le plus « propre » visuellement. Idéal si tu veux du live et une navigation sans superflu.</p>
+            </div>
+            <div class="chips">
+              <span>Studio live mis en avant</span>
+              <span>Interface récente</span>
+              <span>Plusieurs moyens de paiement</span>
+            </div>
+            <div class="tp"><span>Trustpilot</span><em>3,8 / 5</em></div>
+            <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
-          <p class="summary">Pour ceux qui veulent du choix sans se perdre : beaucoup de titres, dépôts classiques, conditions lisibles.</p>
-          <ul class="features">
-            <li>Gros volume de machines et tables</li>
-            <li>Dépôts et retraits courants</li>
-            <li>Support joignable</li>
-          </ul>
-          <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
         </article>
-        <article class="card">
-          <div class="top">
-            <div>
-              <h3>Neo Spin</h3>
-              <p class="highlight">Interface moderne, tables live</p>
+        <article class="card blue">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <div class="card-head">
+              <div>
+                <h3>Evo Spin</h3>
+                <div class="stars"><b>★★★☆☆</b> 2,6/5</div>
+              </div>
+              <span class="rank">#3</span>
             </div>
-            <div class="rating"><strong>9.2</strong><small>/10</small></div>
+            <div class="offer">
+              <strong>Catalogue dense, paiements propres</strong>
+              <p>Pour ceux qui veulent du choix sans se perdre : beaucoup de titres, dépôts classiques, conditions lisibles.</p>
+            </div>
+            <div class="chips">
+              <span>Gros volume de machines</span>
+              <span>Dépôts et retraits courants</span>
+              <span>Support joignable</span>
+            </div>
+            <div class="tp"><span>Trustpilot</span><em>2,6 / 5</em></div>
+            <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
-          <p class="summary">Le plus « propre » visuellement. Idéal si tu veux du live et une navigation sans superflu.</p>
-          <ul class="features">
-            <li>Studio live mis en avant</li>
-            <li>Interface récente, lisible</li>
-            <li>Plusieurs moyens de paiement</li>
-          </ul>
-          <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
         </article>
       </div>
     </div>
@@ -367,26 +443,26 @@
           <div>Live</div>
           <div>Lien</div>
         </div>
-        <div class="row">
+        <div class="row violet">
           <strong>Crown Slots</strong>
           <div>Retraits rapides, catalogue large</div>
           <div>Souvent 24 h</div>
           <div>Oui</div>
           <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
         </div>
-        <div class="row">
-          <strong>Evo Spin</strong>
-          <div>Catalogue dense, paiements propres</div>
-          <div>24–48 h</div>
-          <div>Oui</div>
-          <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
-        </div>
-        <div class="row">
+        <div class="row green">
           <strong>Neo Spin</strong>
           <div>Interface moderne, tables live</div>
           <div>24–72 h</div>
           <div>Oui</div>
           <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
+        </div>
+        <div class="row blue">
+          <strong>Evo Spin</strong>
+          <div>Catalogue dense, paiements propres</div>
+          <div>24–48 h</div>
+          <div>Oui</div>
+          <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
         </div>
       </div>
     </div>
@@ -406,8 +482,8 @@
           <p>Un bonus tape-à-l’œil ne sert à rien si l’argent met une semaine à sortir.</p>
         </article>
         <article>
-          <h3>Liens marqués</h3>
-          <p>Les boutons vers les opérateurs sont affiliés. Tu sais ce que tu cliques.</p>
+          <h3>Jeu responsable</h3>
+          <p>Jouer comporte des risques. Jouez de façon responsable.</p>
         </article>
         <article>
           <h3>18+ non négociable</h3>
@@ -435,7 +511,7 @@
     <div class="faq wrap">
       <div class="faq-item">
         <button class="faq-q" type="button">Comment sont choisis les casinos ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">On ne liste pas 80 opérateurs. On garde une courte sélection, on compare ce qui se voit vraiment (jeux, retraits, live, clarté de l’offre) et on indique clairement quand un lien est affilié.</div>
+        <div class="faq-a">On ne liste pas 80 opérateurs. On garde une courte sélection et on compare ce qui se voit vraiment : jeux, retraits, live, clarté de l’offre.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button">Money Tox est-il un casino ? <span class="arrow">⌄</span></button>
@@ -444,10 +520,6 @@
       <div class="faq-item">
         <button class="faq-q" type="button">Les notes sont-elles officielles ? <span class="arrow">⌄</span></button>
         <div class="faq-a">Non. Ce sont des notes éditoriales Money Tox, pas un score de régulateur. Elles servent à classer cette sélection, pas à garantir un résultat de jeu.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Pourquoi certains liens sont affiliés ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">Si tu t’inscris via un lien du site, Money Tox peut recevoir une commission. Ça ne change pas le classement : Crown Slots reste n°1 de cette page parce qu’il coche le plus de cases, pas parce que le lien existe.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button">Comment jouer sans se faire mal ? <span class="arrow">⌄</span></button>
@@ -464,7 +536,7 @@
   <p>Joue uniquement si tu as 18 ans ou plus. Fixe un budget avant de déposer. Ne joue pas avec l’argent destiné au loyer, à l’alimentation ou aux factures. Arrête-toi si le jeu n’est plus un plaisir.</p>
   <h2>Aide</h2>
   <p>En France, Joueurs Info Service : 09 74 75 13 13 et <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener noreferrer">joueurs-info-service.fr</a>.</p>
-  <p><a href="#top" data-home>Retour à l’accueil</a></p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <article class="wrap legal" id="confidentialite">
@@ -472,9 +544,9 @@
   <p>Money Tox est un site d’information. L’hébergeur peut enregistrer des journaux techniques pour faire fonctionner le service. Money Tox ne vend pas de listes de contacts.</p>
   <h2>Liens sortants</h2>
   <p>Les boutons vers Crown Slots, Evo Spin et Neo Spin mènent à des sites tiers. Leurs politiques s’appliquent dès que tu quittes Money Tox.</p>
-  <h2>Affiliation</h2>
-  <p>Certains liens sont affiliés. Une commission peut être versée si tu t’inscris via ces liens.</p>
-  <p><a href="#top" data-home>Retour à l’accueil</a></p>
+  <h2>Jeu responsable</h2>
+  <p>Jouer comporte des risques. Jouez de façon responsable.</p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <article class="wrap legal" id="conditions">
@@ -482,17 +554,19 @@
   <p>Money Tox est un comparateur indépendant des opérateurs présentés. Aucun compte joueur n’est ouvert ici.</p>
   <h2>Contenu</h2>
   <p>Les notes et tableaux sont éditoriaux. Ils ne constituent pas un conseil financier. Les offres peuvent changer chez l’opérateur sans préavis.</p>
+  <h2>Jeu responsable</h2>
+  <p>Jouer comporte des risques. Jouez de façon responsable.</p>
   <h2>Responsabilité</h2>
   <p>Money Tox ne garantit aucun gain, aucun délai de paiement, ni l’accessibilité d’un opérateur dans ton pays.</p>
-  <p><a href="#top" data-home>Retour à l’accueil</a></p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <footer>
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="logo"><span class="mark">MT</span> MONEY <span>TOX</span></div>
-        <p>Money Tox compare une poignée de casinos en ligne. Ce n’est pas un opérateur de jeu. Certains liens sont affiliés.</p>
+        <div class="logo">MONEY <span>TOX</span></div>
+        <p>Jouer comporte des risques. Jouez de façon responsable.</p>
       </div>
       <div class="flinks">
         <a href="#casinos">Casinos</a>
@@ -503,7 +577,7 @@
         <a href="#conditions">Conditions</a>
       </div>
     </div>
-    <p class="copy">18+ uniquement. Le jeu peut créer une dépendance. Money Tox ne garantit aucun gain.</p>
+    <p class="copy">© 2026 Money Tox. Tous droits réservés.</p>
   </div>
 </footer>
 
