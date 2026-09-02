@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Money Tox — Les meilleurs casinos en ligne</title>
+  <meta name="description" content="Money Tox compare les offres de casinos en ligne.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #05070a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      z-index: 100;
+      background: rgba(5, 7, 10, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #1677ff;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      color: #8993a3;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .header-button {
+      background: #1677ff;
+      padding: 12px 20px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .header-button:hover,
+    .primary:hover {
+      background: #2f8cff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 760px;
+      padding: 180px 20px 100px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+
+      background-size: 55px 55px;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 450px;
+      background: #1677ff;
+      opacity: .11;
+      filter: blur(140px);
+      border-radius: 50%;
+      left: 50%;
+      top: 100px;
+      transform: translateX(-50%);
+    }
+
+    .hero-content {
+      position: relative;
+      width: 100%;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 50px;
+      border: 1px solid rgba(22,119,255,.4);
+      background: rgba(22,119,255,.09);
+      color: #67a7ff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: .98;
+      letter-spacing: -5px;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: #1677ff;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: 28px auto 0;
+      color: #8993a3;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .primary,
+    .secondary {
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .primary {
+      background: #1677ff;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+    }
+
+    .secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .responsible {
+      margin-top: 20px;
+      color: #687281;
+      font-size: 12px;
+    }
+
+    /* SECTIONS */
+
+    section:not(.hero) {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      color: #1677ff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -2px;
+      font-weight: 900;
+    }
+
+    .section-description {
+      margin-top: 10px;
+      color: #8993a3;
+    }
+
+    /* CARDS */
+
+    .cards {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #0d1219;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 28px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(22,119,255,.45);
+    }
+
+    .card.first {
+      border-color: rgba(22,119,255,.55);
+      box-shadow: 0 0 70px rgba(22,119,255,.10);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1677ff;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .casino-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .casino-name {
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .bonus {
+      margin-top: 15px;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .rating {
+      background: rgba(255,255,255,.05);
+      border-radius: 12px;
+      padding: 9px 12px;
+      text-align: center;
+      height: fit-content;
+    }
+
+    .rating strong {
+      font-size: 20px;
+    }
+
+    .rating small {
+      color: #687281;
+      display: block;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,.07);
+      margin: 25px 0;
+    }
+
+    .features {
+      list-style: none;
+      color: #aeb6c2;
+      font-size: 14px;
+    }
+
+    .features li {
+      margin: 13px 0;
+    }
+
+    .features li:before {
+      content: "✓";
+      color: #1677ff;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .card-button {
+      display: block;
+      margin-top: 25px;
+      padding: 13px;
+      background: rgba(255,255,255,.05);
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .card-button:hover {
+      background: #1677ff;
+    }
+
+    /* COMPARISON */
+
+    .comparison {
+      background: #080b10;
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .table {
+      margin-top: 40px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr .5fr .7fr;
+      gap: 20px;
+      padding: 20px 25px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      align-items: center;
+    }
+
+    .row:first-child {
+      border-top: 0;
+      color: #687281;
+      background: rgba(255,255,255,.025);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .row:not(:first-child) {
+      font-size: 14px;
+    }
+
+    .table-button {
+      background: #1677ff;
+      padding: 10px 16px;
+      border-radius: 9px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    /* FEATURES */
+
+    .why-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .why {
+      background: #0d1219;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .why-icon {
+      color: #1677ff;
+      font-size: 25px;
+    }
+
+    .why h3 {
+      margin-top: 20px;
+    }
+
+    .why p {
+      margin-top: 8px;
+      color: #8993a3;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      background: #0d1219;
+      border: 1px solid rgba(22,119,255,.35);
+      border-radius: 28px;
+      padding: 80px 30px;
+      text-align: center;
+      box-shadow: 0 0 90px rgba(22,119,255,.08);
+    }
+
+    .cta:before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 250px;
+      background: #1677ff;
+      opacity: .08;
+      filter: blur(100px);
+      left: 50%;
+      top: -100px;
+      transform: translateX(-50%);
+    }
+
+    .cta-content {
+      position: relative;
+    }
+
+    .cta h2 {
+      margin: 0;
+    }
+
+    .cta p {
+      color: #8993a3;
+      max-width: 550px;
+      margin: 18px auto 0;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 45px auto 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: none;
+      color: white;
+      padding: 23px 0;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      display: none;
+      color: #8993a3;
+      font-size: 14px;
+      padding: 0 0 22px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .arrow {
+      color: #1677ff;
+      transition: .2s;
+    }
+
+    .faq-item.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 55px 0 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-text {
+      margin-top: 12px;
+      max-width: 380px;
+      color: #687281;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 12px 40px;
+      color: #8993a3;
+      font-size: 13px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: 40px;
+      padding-top: 20px;
+      color: #687281;
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 800px) {
+
+      nav,
+      .header-button {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .row:first-child {
+        display: none;
+      }
+
+      .table-button {
+        display: inline-block;
+        width: fit-content;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      section:not(.hero) {
+        padding: 75px 0;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .bonus {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="#" class="logo">
+      MONEY <span>TOX</span>
+    </a>
+
+    <nav>
+      <a href="#casinos">Casinos</a>
+      <a href="#comparatif">Comparatif</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a href="#casinos" class="header-button">
+      Voir les casinos
+    </a>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="label">
+      MONEY TOX • CASINO GUIDE
+    </div>
+
+    <h1>
+      Les meilleurs casinos.
+      <br>
+      <span>Les meilleures offres.</span>
+    </h1>
+
+    <p class="hero-text">
+      Compare les casinos en ligne, découvre leurs offres
+      et trouve celui qui correspond le mieux à ton style de jeu.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#casinos" class="primary">
+        Voir les casinos →
+      </a>
+
+      <a href="#comparatif" class="secondary">
+        Comparer les offres
+      </a>
+
+    </div>
+
+    <p class="responsible">
+      18+ • Jouez responsablement
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- CASINOS -->
+
+<section id="casinos">
+
+  <div class="container">
+
+    <div class="section-label">
+      SÉLECTION
+    </div>
+
+    <h2>
+      Nos casinos sélectionnés
+    </h2>
+
+    <p class="section-description">
+      Une sélection claire pour trouver rapidement les offres qui valent le détour.
+    </p>
+
+
+    <div class="cards">
+
+      <!-- CASINO 1 -->
+
+      <div class="card first">
+
+        <div class="badge">
+          CHOIX N°1
+        </div>
+
+        <div class="casino-top">
+
+          <div>
+            <div class="casino-name">
+              Casino One
+            </div>
+
+            <div class="bonus">
+              100% jusqu'à 500€
+            </div>
+          </div>
+
+          <div class="rating">
+            <strong>9.8</strong>
+            <small>/10</small>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <ul class="features">
+          <li>Retraits rapides</li>
+          <li>Large choix de jeux</li>
+          <li>Bonus de bienvenue</li>
+        </ul>
+
+        <a href="#" class="card-button">
+          Découvrir l'offre →
+        </a>
+
+      </div>
+
+
+      <!-- CASINO 2 -->
+
+      <div class="card">
+
+        <div class="badge">
+          POPULAIRE
+        </div>
+
+        <div class="casino-top">
+
+          <div>
+            <div class="casino-name">
+              Casino Nova
+            </div>
+
+            <div class="bonus">
+              200% jusqu'à 300€
+            </div>
+          </div>
+
+          <div class="rating">
+            <strong>9.5</strong>
+            <small>/10</small>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <ul class="features">
+          <li>Nombreux jeux</li>
+          <li>Paiements sécurisés</li>
+          <li>Offre de bienvenue</li>
+        </ul>
+
+        <a href="#" class="card-button">
+          Découvrir l'offre →
+        </a>
+
+      </div>
+
+
+      <!-- CASINO 3 -->
+
+      <div class="card">
+
+        <div class="casino-top">
+
+          <div>
+            <div class="casino-name">
+              Casino Prime
+            </div>
+
+            <div class="bonus">
+              100% jusqu'à 250€
+            </div>
+          </div>
+
+          <div class="rating">
+            <strong>9.2</strong>
+            <small>/10</small>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <ul class="features">
+          <li>Interface moderne</li>
+          <li>Jeux live</li>
+          <li>Plusieurs moyens de paiement</li>
+        </ul>
+
+        <a href="#" class="card-button">
+          Découvrir l'offre →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMPARATIF -->
+
+<section id="comparatif" class="comparison">
+
+  <div class="container">
+
+    <div class="section-label">
+      COMPARATIF
+    </div>
+
+    <h2>
+      Compare en un coup d'œil
+    </h2>
+
+    <div class="table">
+
+      <div class="row">
+        <div>Casino</div>
+        <div>Bonus</div>
+        <div>Note</div>
+        <div>Action</div>
+      </div>
+
+      <div class="row">
+        <strong>Casino One</strong>
+        <div>100% jusqu'à 500€</div>
+        <strong>9.8/10</strong>
+        <a href="#casinos" class="table-button">Voir</a>
+      </div>
+
+      <div class="row">
+        <strong>Casino Nova</strong>
+        <div>200% jusqu'à 300€</div>
+        <strong>9.5/10</strong>
+        <a href="#casinos" class="table-button">Voir</a>
+      </div>
+
+      <div class="row">
+        <strong>Casino Prime</strong>
+        <div>100% jusqu'à 250€</div>
+        <strong>9.2/10</strong>
+        <a href="#casinos" class="table-button">Voir</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- POURQUOI -->
+
+<section>
+
+  <div class="container">
+
+    <div style="text-align:center">
+
+      <div class="section-label">
+        POURQUOI MONEY TOX
+      </div>
+
+      <h2>
+        Simple. Clair. Efficace.
+      </h2>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <div class="why">
+        <div class="why-icon">◈</div>
+        <h3>Sélection claire</h3>
+        <p>
+          Les informations importantes pour comparer rapidement.
+        </p>
+      </div>
+
+      <div class="why">
+        <div class="why-icon">⚡</div>
+        <h3>Offres vérifiées</h3>
+        <p>
+          Présentation claire des informations et conditions disponibles.
+        </p>
+      </div>
+
+      <div class="why">
+        <div class="why-icon">▥</div>
+        <h3>Comparaison simple</h3>
+        <p>
+          Les principales caractéristiques réunies au même endroit.
+        </p>
+      </div>
+
+      <div class="why">
+        <div class="why-icon">▣</div>
+        <h3>Pensé pour mobile</h3>
+        <p>
+          Une navigation rapide et adaptée aux smartphones.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <div class="cta-content">
+
+        <h2>
+          Prêt à trouver ton prochain casino ?
+        </h2>
+
+        <p>
+          Compare les offres sélectionnées par Money Tox
+          et trouve celle qui te correspond.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#casinos" class="primary">
+            Voir les casinos →
+          </a>
+
+        </div>
+
+        <p class="responsible">
+          18+ • Jouez avec modération
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div style="text-align:center">
+
+      <div class="section-label">
+        FAQ
+      </div>
+
+      <h2>
+        Questions fréquentes
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Comment choisissez-vous les casinos ?
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Nous présentons les informations disponibles sur les opérateurs
+          et leurs offres afin de faciliter leur comparaison.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Les offres sont-elles gratuites ?
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Les conditions varient selon chaque opérateur.
+          Consulte toujours les conditions de l'offre avant de l'utiliser.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Comment fonctionne le bonus de bienvenue ?
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Chaque opérateur possède ses propres conditions, notamment
+          concernant le dépôt, les mises et les conditions de retrait.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Pourquoi certains liens sont-ils affiliés ?
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Money Tox peut recevoir une commission lorsqu'un utilisateur
+          utilise certains liens présents sur le site.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Comment jouer de manière responsable ?
+          <span class="arrow">⌄</span>
+        </button>
+
+        <div class="faq-answer">
+          Le jeu doit rester un divertissement. Fixe tes limites,
+          ne joue jamais avec de l'argent nécessaire à tes dépenses
+          et respecte toujours les règles applicables dans ton pays.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+
+        <div class="logo">
+          MONEY <span>TOX</span>
+        </div>
+
+        <p class="footer-text">
+          Guide et comparateur. Certains liens présents
+          sur Money Tox peuvent être affiliés.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#casinos">Casinos</a>
+        <a href="#comparatif">Comparatif</a>
+        <a href="#faq">FAQ</a>
+        <a href="#">Jeu responsable</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Conditions</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      18+ • Jouez avec modération. Money Tox ne garantit pas les résultats de jeu.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  document.querySelectorAll(".faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      const item = button.parentElement;
+
+      item.classList.toggle("active");
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
