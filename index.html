@@ -27,35 +27,36 @@
     }
     .wrap { width: min(1180px, calc(100% - 40px)); margin: auto; }
     .giveaway {
-      min-height: 44px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 8px;
+      gap: 10px;
       width: 100%;
+      padding: 8px 12px;
       background: #16100a;
       border-bottom: 1px solid rgba(251, 191, 36, .35);
     }
-    .giveaway p {
-      color: #fff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0;
-      line-height: 1.2;
-      text-transform: uppercase;
-      margin: 0;
+    .giveaway-text {
       flex: 1;
       min-width: 0;
-      text-align: left;
+      container-type: inline-size;
+    }
+    .giveaway p {
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
     }
     .giveaway .btn {
       background: #fbbf24;
       color: #111;
-      padding: 6px 10px;
+      padding: 0 20px;
       border-radius: 999px;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 900;
-      height: auto;
+      height: 40px;
       flex-shrink: 0;
     }
     .giveaway .btn:hover { background: #f59e0b; }
@@ -155,24 +156,30 @@
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
     .card.gold,
     .card.roulette,
-    .card.telegram,
-    .card.blackjack {
+    .card.telegram {
       grid-column: 3;
     }
+    .card.blackjack {
+      grid-column: 1 / -1;
+    }
+    .card.blackjack:hover { transform: none; }
     .card.gold {
       --brand: #fbbf24;
       --light: #fde68a;
       --btn: #fbbf24;
+      margin-top: 24px;
     }
     .card.roulette {
       --brand: #e11d48;
       --light: #fb7185;
       --btn: #e11d48;
+      margin-top: 24px;
     }
     .card.telegram {
       --brand: #229ed9;
       --light: #7dd3fc;
       --btn: #229ed9;
+      margin-top: 24px;
     }
     .card.telegram .kicker { color: #7dd3fc; margin: 0; }
     .card.telegram .btn { margin-top: auto; }
@@ -180,14 +187,57 @@
       --brand: #16a34a;
       --light: #4ade80;
       --btn: #16a34a;
+      margin-top: 24px;
     }
-    .chart-empty {
-      min-height: 240px;
-      width: 100%;
-      border-radius: 14px;
-      background: rgba(0,0,0,.4);
-      border: 1px solid rgba(255,255,255,.1);
-      flex: 1;
+    .bj-lead { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.7); }
+    .bj-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .bj-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 800;
+    }
+    .bj-pill.H { background: #1d4ed8; color: #eff6ff; }
+    .bj-pill.S { background: #15803d; color: #f0fdf4; }
+    .bj-pill.D { background: #d97706; color: #fffbeb; }
+    .bj-pill.P { background: #7c3aed; color: #f5f3ff; }
+    .bj-block { margin-top: 18px; }
+    .bj-block h4 { font-size: 16px; color: #fff; letter-spacing: 0; }
+    .bj-block p { margin-top: 4px; font-size: 12px; color: rgba(255,255,255,.55); }
+    .bj-scroll {
+      margin-top: 8px; overflow-x: auto;
+      border-radius: 14px; border: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.35);
+    }
+    .bj-table {
+      width: 100%; min-width: 560px; border-collapse: collapse;
+    }
+    .bj-table th, .bj-table td {
+      text-align: center; padding: 7px 4px; font-size: 11px; font-weight: 800;
+    }
+    .bj-table thead th {
+      background: rgba(0,0,0,.5); color: rgba(255,255,255,.8);
+      font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .bj-table tbody th {
+      position: sticky; left: 0; z-index: 1;
+      text-align: left; padding-left: 10px; white-space: nowrap;
+      background: #101814; color: #fff; font-size: 12px; font-weight: 700;
+    }
+    .bj-table thead th:first-child {
+      position: sticky; left: 0; z-index: 2;
+      text-align: left; padding-left: 10px; background: #0a120c;
+    }
+    .bj-table td { border-left: 1px solid rgba(0,0,0,.25); }
+    .bj-table td.H { background: #1d4ed8; color: #eff6ff; }
+    .bj-table td.S { background: #15803d; color: #f0fdf4; }
+    .bj-table td.D { background: #d97706; color: #fffbeb; }
+    .bj-table td.Ds { background: #b45309; color: #fffbeb; }
+    .bj-table td.P { background: #7c3aed; color: #f5f3ff; }
+    .bj-phone { display: none; margin-top: 8px; font-size: 12px; color: rgba(255,255,255,.5); }
+    .bj-short { display: none; }
+    @media (max-width: 640px) {
+      .bj-phone { display: block; }
+      .bj-full { display: none; }
+      .bj-short { display: inline; }
     }
     .video-empty {
       aspect-ratio: 16 / 9;
@@ -258,6 +308,41 @@
       color: transparent;
     }
     .offer p { margin-top: 10px; color: rgba(255,255,255,.55); font-size: 13px; }
+    .offer-list { display: grid; gap: 8px; margin-top: 12px; }
+    .offer-item {
+      text-align: left;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: color-mix(in srgb, var(--brand) 8%, transparent);
+      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
+    }
+    .offer-item small {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+    .offer-item em {
+      display: block;
+      margin-top: 4px;
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,.5);
+    }
+    .offer-item b {
+      display: block;
+      margin-top: 6px;
+      font-family: Oswald, Inter, sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      color: #fff;
+      background: none;
+      -webkit-text-fill-color: #fff;
+    }
     .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
     .chips span {
       border-radius: 999px;
@@ -343,25 +428,6 @@
     }
     .cta p { max-width: 520px; margin: 14px auto 0; color: #8b95a4; }
     .cta .btn { margin-top: 24px; }
-    .faq { max-width: 760px; margin: 36px auto 0; border-top: 1px solid rgba(255,255,255,.08); }
-    .faq-item { border-bottom: 1px solid rgba(255,255,255,.08); }
-    .faq-q {
-      width: 100%;
-      border: 0;
-      background: none;
-      color: #fff;
-      padding: 20px 0;
-      text-align: left;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .faq-a { display: none; color: #8b95a4; font-size: 15px; padding: 0 0 18px; }
-    .faq-item.open .faq-a { display: block; }
-    .arrow { color: #1677ff; }
     .legal { display: none; padding: 180px 0 80px; max-width: 680px; }
     .legal h1 { font-size: 40px; }
     .legal p, .legal li { margin-top: 14px; color: #8b95a4; }
@@ -443,7 +509,7 @@
     .mobile-nav {
       display: none;
       position: fixed;
-      inset: 120px 0 0;
+      inset: 132px 0 0;
       background: #0d1219;
       z-index: 90;
       padding: 20px;
@@ -451,9 +517,11 @@
     .mobile-nav a { display: block; padding: 14px 8px; color: #8b95a4; }
     body.menu-open .mobile-nav { display: block; }
     @media (min-width: 640px) {
-      .giveaway { min-height: 56px; gap: 16px; padding: 0 16px; }
-      .giveaway p { font-size: 14px; letter-spacing: .02em; }
-      .giveaway .btn { font-size: 12px; padding: 7px 14px; }
+      .giveaway { padding: 10px 16px; gap: 14px; }
+      .giveaway .btn { height: 44px; padding: 0 24px; font-size: 16px; }
+    }
+    @media (max-width: 639px) {
+      .giveaway p { white-space: normal; }
     }
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
@@ -483,7 +551,9 @@
 <body>
 <header>
   <div class="giveaway">
-    <p>200 € à gagner tous les dimanches</p>
+    <div class="giveaway-text">
+      <p>200 € à gagner tous les dimanches 20H</p>
+    </div>
     <a class="btn" href="#concours">Participer</a>
   </div>
   <div class="wrap header-inner">
@@ -493,7 +563,6 @@
     <nav>
       <a href="#casinos">Les casinos</a>
       <a href="#concours">Concours</a>
-      <a href="#faq">FAQ</a>
     </nav>
     <a href="#casinos" class="btn header-cta">Voir la sélection</a>
     <button class="menu-btn" type="button" aria-label="Menu" id="menuBtn">☰</button>
@@ -503,7 +572,6 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#casinos">Les casinos</a>
   <a href="#concours">Concours</a>
-  <a href="#faq">FAQ</a>
   <a href="#jeu-responsable">Jeu responsable</a>
   <a href="#confidentialite">Confidentialité</a>
   <a href="#conditions">Conditions</a>
@@ -529,7 +597,18 @@
             </div>
             <div class="offer">
               <strong>Casino et paris sportifs</strong>
-              <p>Le plus « propre » visuellement. Idéal si tu veux du live et une navigation sans superflu.</p>
+              <div class="offer-list">
+                <div class="offer-item">
+                  <small>Offre 1</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>100 % jusqu’à 1 000 € + 100 FS</b>
+                </div>
+                <div class="offer-item">
+                  <small>Offre 2</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>125 % jusqu’à 3 000 € + 10 % de cashback</b>
+                </div>
+              </div>
             </div>
             <div class="chips">
               <span>Retrait jusqu'à 72 h</span>
@@ -554,8 +633,19 @@
               <span class="rank">#2</span>
             </div>
             <div class="offer">
-              <strong>Retraits rapides, catalogue large</strong>
-              <p>Le plus équilibré de la sélection : jeux nombreux, parcours simple, et une offre d’arrivée claire.</p>
+              <strong>Casino uniquement</strong>
+              <div class="offer-list">
+                <div class="offer-item">
+                  <small>Offre 1</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>125 % jusqu’à 1 000 € + 100 FS</b>
+                </div>
+                <div class="offer-item">
+                  <small>Offre 2</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>100 % jusqu’à 5 000 €</b>
+                </div>
+              </div>
             </div>
             <div class="chips">
               <span>Retraits souvent sous 24 h</span>
@@ -580,8 +670,19 @@
               <span class="rank">#3</span>
             </div>
             <div class="offer">
-              <strong>Catalogue dense, paiements propres</strong>
-              <p>Pour ceux qui veulent du choix sans se perdre : beaucoup de titres, dépôts classiques, conditions lisibles.</p>
+              <strong>Casino uniquement</strong>
+              <div class="offer-list">
+                <div class="offer-item">
+                  <small>Offre 1</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>125 % jusqu’à 2 500 € + 125 FS sur Wolf Gold (Pragmatic Play)</b>
+                </div>
+                <div class="offer-item">
+                  <small>Offre 2</small>
+                  <em>Uniquement sur le premier dépôt</em>
+                  <b>150 % jusqu’à 6 000 € + 150 FS</b>
+                </div>
+              </div>
             </div>
             <div class="chips">
               <span>Retraits 24 à 48 h</span>
@@ -627,8 +728,67 @@
           <div class="card-bar"></div>
           <div class="card-body">
             <h3>Tableau blackjack</h3>
-            <div class="chart-empty">
-              <!-- Emplacement libre : image, tableau ou autre contenu -->
+            <p class="bj-lead">Ta main à gauche, la carte du croupier en haut.</p>
+            <p class="bj-phone">Sur téléphone, glisse le tableau vers la droite pour voir jusqu’à l’As.</p>
+            <div class="bj-legend">
+              <span class="bj-pill H"><span>T</span> Tirer</span>
+              <span class="bj-pill S"><span>R</span> Rester</span>
+              <span class="bj-pill D"><span>D</span> Doubler</span>
+              <span class="bj-pill P"><span>S</span> Splitter</span>
+            </div>
+            <div class="bj-block">
+              <h4>Mains dures</h4>
+              <p>Sans As, ou As compté 1. Exemple : 10 + 6 = 16.</p>
+              <div class="bj-scroll">
+                <table class="bj-table">
+                  <thead><tr><th>Ta main</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+                  <tbody>
+                    <tr><th>5 à 8</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>9</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>10</th><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>11</th><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>12</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>13 à 16</th><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>17 à 21</th><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bj-block">
+              <h4>Mains souples</h4>
+              <p>As compté 11. Exemple : As + 6 = 17 souple.</p>
+              <div class="bj-scroll">
+                <table class="bj-table">
+                  <thead><tr><th>Ta main</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+                  <tbody>
+                    <tr><th>As-2 / As-3</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>As-4 / As-5</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>As-6</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>As-7</th><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="Ds"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="Ds"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="Ds"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="Ds"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>As-8 / As-9</th><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="bj-block">
+              <h4>Paires</h4>
+              <p>Deux cartes identiques. Splitter = séparer en deux mains.</p>
+              <div class="bj-scroll">
+                <table class="bj-table">
+                  <thead><tr><th>Ta main</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+                  <tbody>
+                    <tr><th>As-As</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td></tr>
+                    <tr><th>2-2 / 3-3</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>4-4</th><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>5-5</th><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="D"><span class="bj-short">D</span><span class="bj-full">Doubler</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>6-6</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>7-7</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td><td class="H"><span class="bj-short">T</span><span class="bj-full">Tirer</span></td></tr>
+                    <tr><th>8-8</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td></tr>
+                    <tr><th>9-9</th><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="P"><span class="bj-short">S</span><span class="bj-full">Splitter</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td></tr>
+                    <tr><th>10-10</th><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td><td class="S"><span class="bj-short">R</span><span class="bj-full">Rester</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </article>
@@ -667,31 +827,6 @@
         <h2>Commence par la sélection, pas par le premier pub.</h2>
         <p>Compare les trois, ouvre celui qui colle à ton usage, lis les conditions avant de déposer.</p>
         <a href="#casinos" class="btn">Revenir aux casinos</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap" style="text-align:center">
-      <p class="kicker">FAQ</p>
-      <h2>Questions utiles</h2>
-    </div>
-    <div class="faq wrap">
-      <div class="faq-item">
-        <button class="faq-q" type="button">Comment sont choisis les casinos ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">On ne liste pas 80 opérateurs. On garde une courte sélection et on compare ce qui se voit vraiment : jeux, retraits, live, clarté de l’offre.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Money Tox est-il un casino ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">Non. C’est un guide indépendant du compte joueur. L’inscription, le dépôt et le jeu se font chez l’opérateur, pas ici.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Les notes sont-elles officielles ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">Non. Ce sont des notes éditoriales Money Tox, pas un score de régulateur. Elles servent à classer cette sélection, pas à garantir un résultat de jeu.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Comment jouer sans se faire mal ? <span class="arrow">⌄</span></button>
-        <div class="faq-a">Fixe un budget avant de déposer. Ne joue jamais avec l’argent du loyer, des courses ou des dettes. Arrête-toi si ça n’est plus un loisir. Aide : 09 74 75 13 13 (Joueurs Info Service, France).</div>
       </div>
     </div>
   </section>
@@ -828,7 +963,6 @@
       <div class="flinks">
         <a href="#casinos">Les casinos</a>
         <a href="#concours">Concours</a>
-        <a href="#faq">FAQ</a>
         <a href="#jeu-responsable">Jeu responsable</a>
         <a href="#confidentialite">Confidentialité</a>
         <a href="#conditions">Conditions</a>
@@ -866,15 +1000,9 @@
         showLegal(id);
         return;
       }
-      if (link.hasAttribute("data-home") || id === "top" || id === "casinos" || id === "faq") {
+      if (link.hasAttribute("data-home") || id === "top" || id === "casinos") {
         showHome();
       }
-    });
-  });
-
-  document.querySelectorAll(".faq-q").forEach((button) => {
-    button.addEventListener("click", () => {
-      button.parentElement.classList.toggle("open");
     });
   });
 
