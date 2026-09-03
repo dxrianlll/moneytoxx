@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Money Tox — Comparateur de casinos en ligne</title>
-  <meta name="description" content="Money Tox compare Crown Slots, Evo Spin et Neo Spin. 18+ • Jeu responsable.">
+  <meta name="description" content="Money Tox compare Neo Spin, Crown Slots et Evo Spin. 18+ • Jeu responsable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -27,35 +27,34 @@
     }
     .wrap { width: min(1180px, calc(100% - 40px)); margin: auto; }
     .giveaway {
-      height: 48px;
+      min-height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 0 16px;
+      gap: 8px;
+      padding: 8px 12px;
       background: #16100a;
       border-bottom: 1px solid rgba(251, 191, 36, .35);
     }
     .giveaway p {
       color: #fff;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: .04em;
+      letter-spacing: 0;
+      line-height: 1.2;
       text-transform: uppercase;
       margin: 0;
-      max-width: 70%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      text-align: center;
     }
     .giveaway .btn {
       background: #fbbf24;
       color: #111;
-      padding: 7px 14px;
+      padding: 6px 10px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 900;
       height: auto;
+      flex-shrink: 0;
     }
     .giveaway .btn:hover { background: #f59e0b; }
     header {
@@ -158,7 +157,21 @@
     }
     .card-body { display: flex; flex-direction: column; gap: 16px; padding: 22px; flex: 1; }
     .card-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .card-title { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
+    .casino-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: #000;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .casino-logo-white { background: #fff; }
     .card h3 { font-size: 20px; }
+    .card.green h3,
+    .card.violet h3,
+    .card.blue h3 { font-size: 26px; line-height: 1; }
     .stars { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: #8b95a4; font-size: 11px; font-weight: 600; }
     .stars b { color: var(--brand); letter-spacing: 1px; }
     .rank {
@@ -298,6 +311,73 @@
     .legal p, .legal li { margin-top: 14px; color: #8b95a4; }
     .legal h2 { margin-top: 28px; font-size: 22px; }
     .legal a { color: #1677ff; text-decoration: underline; }
+    #concours.legal { max-width: 1180px; }
+    .contest-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 24px; margin-top: 32px; align-items: start; }
+    .contest-box {
+      border: 1px solid rgba(255,255,255,.08);
+      background: #0d1219;
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .contest-box.form { border-color: rgba(251,191,36,.25); background: #120f0a; }
+    .contest-box h2 { margin-top: 0; color: #fff; }
+    .rule { display: flex; gap: 14px; margin-top: 18px; }
+    .rule b {
+      width: 32px; height: 32px; border-radius: 999px;
+      display: grid; place-items: center;
+      background: rgba(251,191,36,.15); color: #fcd34d; font-size: 13px; flex-shrink: 0;
+    }
+    .rule p { margin: 0; }
+    .rule strong { color: #fff; display: block; }
+    .contest-form { margin-top: 20px; display: grid; gap: 14px; }
+    .contest-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contest-form label { display: block; color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .contest-form input[type="text"],
+    .contest-form input[type="email"] {
+      width: 100%;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #0d1219;
+      color: #fff;
+      padding: 0 12px;
+      font: inherit;
+    }
+    .casino-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .casino-pick button {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 14px 8px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+    .casino-pick button.selected {
+      border-color: #fbbf24;
+      background: rgba(251,191,36,.1);
+      box-shadow: 0 0 0 2px rgba(251,191,36,.35);
+    }
+    .casino-pick img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; background: #000; }
+    .casino-pick img.white { background: #fff; }
+    .checks { border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 14px; }
+    .checks label { display: flex; gap: 10px; align-items: flex-start; color: #d5dbe3; font-weight: 500; margin: 8px 0; }
+    .contest-form .btn { width: 100%; background: #fbbf24; color: #111; font-weight: 900; }
+    .contest-form .btn:hover { background: #f59e0b; }
+    .field-error, .form-error { color: #f87171; font-size: 13px; margin-top: 6px; }
+    .contest-ok {
+      display: none;
+      text-align: center;
+      padding: 28px 8px;
+    }
+    .contest-ok h2 { color: #fff; }
+    @media (max-width: 860px) {
+      .contest-grid, .contest-form .row, .casino-pick { grid-template-columns: 1fr; }
+    }
     footer { border-top: 1px solid rgba(255,255,255,.08); padding: 50px 0 28px; }
     .foot { display: flex; justify-content: space-between; gap: 40px; }
     .foot p { margin-top: 12px; max-width: 380px; color: #8b95a4; font-size: 13px; }
@@ -314,6 +394,11 @@
     }
     .mobile-nav a { display: block; padding: 14px 8px; color: #8b95a4; }
     body.menu-open .mobile-nav { display: block; }
+    @media (min-width: 640px) {
+      .giveaway { min-height: 56px; gap: 16px; padding: 0 16px; }
+      .giveaway p { font-size: 14px; letter-spacing: .04em; }
+      .giveaway .btn { font-size: 12px; padding: 7px 14px; }
+    }
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
       .menu-btn { display: grid; place-items: center; }
@@ -327,8 +412,8 @@
 <body>
 <header>
   <div class="giveaway">
-    <p>200 € à gagner tous les dimanches à 20h</p>
-    <a class="btn" href="#casinos">Participer</a>
+    <p>200 € à gagner tous les dimanches</p>
+    <a class="btn" href="#concours">Participer</a>
   </div>
   <div class="wrap header-inner">
     <a href="#casinos" class="logo" data-home>
@@ -337,6 +422,7 @@
     <nav>
       <a href="#casinos">Casinos</a>
       <a href="#comparatif">Comparatif</a>
+      <a href="#concours">Concours</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#comparatif" class="btn header-cta">Comparatif</a>
@@ -347,6 +433,7 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#casinos">Casinos</a>
   <a href="#comparatif">Comparatif</a>
+  <a href="#concours">Concours</a>
   <a href="#faq">FAQ</a>
   <a href="#jeu-responsable">Jeu responsable</a>
   <a href="#confidentialite">Confidentialité</a>
@@ -356,17 +443,46 @@
 <div id="home">
   <section id="casinos">
     <div class="wrap">
-      <h1 class="sr-only">Money Tox</h1>
+      <h1 class="sr-only">Money Tox — Neo Spin, Crown Slots, Evo Spin</h1>
       <div class="cards">
+        <article class="card green">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <div class="card-head">
+              <div class="card-title">
+                <img class="casino-logo" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/630615bc64f919af214e6d46/0x0.png" alt="Neo Spin" width="52" height="52">
+                <div>
+                  <h3>Neo Spin</h3>
+                  <div class="stars"><b>★★★★☆</b> 3,8/5</div>
+                </div>
+              </div>
+              <span class="rank">#1</span>
+            </div>
+            <div class="offer">
+              <strong>Casino et paris sportifs</strong>
+              <p>Le plus « propre » visuellement. Idéal si tu veux du live et une navigation sans superflu.</p>
+            </div>
+            <div class="chips">
+              <span>Retrait jusqu'à 72 h</span>
+              <span>Dépôt minimum 20 €</span>
+              <span>Plusieurs moyens de paiement</span>
+            </div>
+            <div class="tp"><span>Trustpilot</span><em>3,8 / 5</em></div>
+            <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
+          </div>
+        </article>
         <article class="card violet">
           <div class="card-bar"></div>
           <div class="card-body">
             <div class="card-head">
-              <div>
-                <h3>Crown Slots</h3>
-                <div class="stars"><b>★★★☆☆</b> 3,4/5</div>
+              <div class="card-title">
+                <img class="casino-logo casino-logo-white" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/66d608b96557657d6b44adf3/0x0.png" alt="Crown Slots" width="52" height="52">
+                <div>
+                  <h3>Crown Slots</h3>
+                  <div class="stars"><b>★★★☆☆</b> 3,4/5</div>
+                </div>
               </div>
-              <span class="rank">#1</span>
+              <span class="rank">#2</span>
             </div>
             <div class="offer">
               <strong>Retraits rapides, catalogue large</strong>
@@ -374,43 +490,23 @@
             </div>
             <div class="chips">
               <span>Retraits souvent sous 24 h</span>
-              <span>Slots, live et jackpots</span>
-              <span>Parcours mobile propre</span>
+              <span>Dépôt minimum 20 €</span>
+              <span>Plusieurs moyens de paiement</span>
             </div>
             <div class="tp"><span>Trustpilot</span><em>3,4 / 5</em></div>
             <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
-          </div>
-        </article>
-        <article class="card green">
-          <div class="card-bar"></div>
-          <div class="card-body">
-            <div class="card-head">
-              <div>
-                <h3>Neo Spin</h3>
-                <div class="stars"><b>★★★★☆</b> 3,8/5</div>
-              </div>
-              <span class="rank">#2</span>
-            </div>
-            <div class="offer">
-              <strong>Interface moderne, tables live</strong>
-              <p>Le plus « propre » visuellement. Idéal si tu veux du live et une navigation sans superflu.</p>
-            </div>
-            <div class="chips">
-              <span>Studio live mis en avant</span>
-              <span>Interface récente</span>
-              <span>Plusieurs moyens de paiement</span>
-            </div>
-            <div class="tp"><span>Trustpilot</span><em>3,8 / 5</em></div>
-            <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
         </article>
         <article class="card blue">
           <div class="card-bar"></div>
           <div class="card-body">
             <div class="card-head">
-              <div>
-                <h3>Evo Spin</h3>
-                <div class="stars"><b>★★★☆☆</b> 2,6/5</div>
+              <div class="card-title">
+                <img class="casino-logo" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/608da31fc94ba90001634fe6/0x0.png" alt="Evo Spin" width="52" height="52">
+                <div>
+                  <h3>Evo Spin</h3>
+                  <div class="stars"><b>★★★☆☆</b> 2,6/5</div>
+                </div>
               </div>
               <span class="rank">#3</span>
             </div>
@@ -419,9 +515,9 @@
               <p>Pour ceux qui veulent du choix sans se perdre : beaucoup de titres, dépôts classiques, conditions lisibles.</p>
             </div>
             <div class="chips">
-              <span>Gros volume de machines</span>
-              <span>Dépôts et retraits courants</span>
-              <span>Support joignable</span>
+              <span>Retraits 24 à 48 h</span>
+              <span>Dépôt minimum 20 €</span>
+              <span>Plusieurs moyens de paiement</span>
             </div>
             <div class="tp"><span>Trustpilot</span><em>2,6 / 5</em></div>
             <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
@@ -443,19 +539,19 @@
           <div>Live</div>
           <div>Lien</div>
         </div>
+        <div class="row green">
+          <strong>Neo Spin</strong>
+          <div>Casino et paris sportifs</div>
+          <div>Jusqu'à 72 h</div>
+          <div>Oui</div>
+          <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
+        </div>
         <div class="row violet">
           <strong>Crown Slots</strong>
           <div>Retraits rapides, catalogue large</div>
           <div>Souvent 24 h</div>
           <div>Oui</div>
           <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
-        </div>
-        <div class="row green">
-          <strong>Neo Spin</strong>
-          <div>Interface moderne, tables live</div>
-          <div>24–72 h</div>
-          <div>Oui</div>
-          <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
         </div>
         <div class="row blue">
           <strong>Evo Spin</strong>
@@ -542,8 +638,10 @@
 <article class="wrap legal" id="confidentialite">
   <h1>Confidentialité</h1>
   <p>Money Tox est un site d’information. L’hébergeur peut enregistrer des journaux techniques pour faire fonctionner le service. Money Tox ne vend pas de listes de contacts.</p>
+  <h2>Formulaire concours</h2>
+  <p>Si tu t’inscris au tirage des 200 €, Money Tox collecte le nom, le prénom, l’e-mail, le nom d’utilisateur casino et le casino indiqué, uniquement pour gérer le concours et contacter un éventuel gagnant.</p>
   <h2>Liens sortants</h2>
-  <p>Les boutons vers Crown Slots, Evo Spin et Neo Spin mènent à des sites tiers. Leurs politiques s’appliquent dès que tu quittes Money Tox.</p>
+  <p>Les boutons vers Neo Spin, Crown Slots et Evo Spin mènent à des sites tiers. Leurs politiques s’appliquent dès que tu quittes Money Tox.</p>
   <h2>Jeu responsable</h2>
   <p>Jouer comporte des risques. Jouez de façon responsable.</p>
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
@@ -561,6 +659,77 @@
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
+<article class="wrap legal" id="concours">
+  <p class="kicker">Concours</p>
+  <h1>200 € à gagner tous les dimanches</h1>
+  <p>Inscris-toi ici pour le tirage. Tu dois déjà jouer sur l’un des trois casinos, avec un dépôt d’au moins 50 € pendant la semaine du tirage. 18+ • Jeu responsable.</p>
+  <div class="contest-grid">
+    <div class="contest-box">
+      <h2>Conditions de participation</h2>
+      <div class="rule"><b>1</b><p><strong>18 ans minimum</strong>Le concours est réservé aux personnes majeures, autorisées à jouer chez l’opérateur choisi.</p></div>
+      <div class="rule"><b>2</b><p><strong>Un des trois casinos</strong>Tu dois déjà avoir un compte sur Neo Spin, Crown Slots ou Evo Spin, et indiquer lequel.</p></div>
+      <div class="rule"><b>3</b><p><strong>Dépôt minimum 50 €</strong>Un dépôt d’au moins 50 € doit être effectué sur ce compte pendant la semaine du tirage (lundi 00h01 au dimanche 19h59, heure de Paris).</p></div>
+      <div class="rule"><b>4</b><p><strong>Nom d’utilisateur exact</strong>Le nom d’utilisateur saisi doit être identique à celui de ton compte casino. Un identifiant incorrect annule la participation.</p></div>
+      <div class="rule"><b>5</b><p><strong>Une seule participation</strong>Une inscription par personne, par e-mail et par nom d’utilisateur. Les doublons sont retirés du tirage.</p></div>
+      <div class="rule"><b>6</b><p><strong>Tirage du dimanche</strong>200 € sont mis en jeu chaque dimanche. Money Tox contacte le gagnant par e-mail. Sans réponse sous 72 h, un autre tirage est effectué.</p></div>
+      <p>Money Tox n’est pas un casino. Aucun gain n’est garanti. Joue uniquement avec de l’argent que tu peux te permettre de perdre.</p>
+    </div>
+    <div class="contest-box form">
+      <h2>Formulaire d’inscription</h2>
+      <p>Clique sur le casino où tu as déjà un compte, puis envoie tes infos.</p>
+      <div class="contest-ok" id="contestOk">
+        <h2>Participation enregistrée</h2>
+        <p>Ton inscription au tirage de 200 € est prise en compte, sous réserve du dépôt minimum de 50 € et d’un compte valide. Si tu es tiré au sort, on t’écrit par e-mail.</p>
+        <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
+      </div>
+      <form class="contest-form" id="contestForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="lastName">Nom</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name">
+            <div class="field-error" data-error="lastName"></div>
+          </div>
+          <div>
+            <label for="firstName">Prénom</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name">
+            <div class="field-error" data-error="firstName"></div>
+          </div>
+        </div>
+        <div>
+          <label for="email">Adresse e-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+          <div class="field-error" data-error="email"></div>
+        </div>
+        <div>
+          <label for="username">Nom d’utilisateur casino</label>
+          <input id="username" name="username" type="text" autocomplete="username">
+          <div class="field-error" data-error="username"></div>
+        </div>
+        <div>
+          <label>Casino sur lequel tu es inscrit</label>
+          <div class="casino-pick" id="casinoPick">
+            <button type="button" data-casino="neo-spin"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/630615bc64f919af214e6d46/0x0.png" alt="">Neo Spin</button>
+            <button type="button" data-casino="crown-slots"><img class="white" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/66d608b96557657d6b44adf3/0x0.png" alt="">Crown Slots</button>
+            <button type="button" data-casino="evo-spin"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/608da31fc94ba90001634fe6/0x0.png" alt="">Evo Spin</button>
+          </div>
+          <input type="hidden" name="casinoId" id="casinoId">
+          <div class="field-error" data-error="casinoId"></div>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" name="ageConfirmed"> J’ai 18 ans ou plus.</label>
+          <div class="field-error" data-error="ageConfirmed"></div>
+          <label><input type="checkbox" name="depositConfirmed"> Je confirme un dépôt d’au moins 50 € sur le casino choisi pendant la semaine du tirage.</label>
+          <div class="field-error" data-error="depositConfirmed"></div>
+          <label><input type="checkbox" name="rulesAccepted"> J’accepte le règlement du concours Money Tox.</label>
+          <div class="field-error" data-error="rulesAccepted"></div>
+        </div>
+        <p class="form-error" id="contestFormError"></p>
+        <button class="btn" type="submit">Valider ma participation</button>
+      </form>
+    </div>
+  </div>
+</article>
+
 <footer>
   <div class="wrap">
     <div class="foot">
@@ -571,6 +740,7 @@
       <div class="flinks">
         <a href="#casinos">Casinos</a>
         <a href="#comparatif">Comparatif</a>
+        <a href="#concours">Concours</a>
         <a href="#faq">FAQ</a>
         <a href="#jeu-responsable">Jeu responsable</a>
         <a href="#confidentialite">Confidentialité</a>
@@ -604,7 +774,7 @@
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const id = link.getAttribute("href").slice(1);
-      if (["jeu-responsable", "confidentialite", "conditions"].includes(id)) {
+      if (["jeu-responsable", "confidentialite", "conditions", "concours"].includes(id)) {
         event.preventDefault();
         showLegal(id);
         return;
@@ -624,6 +794,48 @@
   menuBtn.addEventListener("click", () => {
     document.body.classList.toggle("menu-open");
   });
+
+  const contestForm = document.getElementById("contestForm");
+  const casinoPick = document.getElementById("casinoPick");
+  casinoPick.querySelectorAll("button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      casinoPick.querySelectorAll("button").forEach((b) => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      document.getElementById("casinoId").value = btn.dataset.casino;
+    });
+  });
+  contestForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = {
+      lastName: document.getElementById("lastName").value.trim(),
+      firstName: document.getElementById("firstName").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      username: document.getElementById("username").value.trim(),
+      casinoId: document.getElementById("casinoId").value,
+      ageConfirmed: contestForm.ageConfirmed.checked,
+      depositConfirmed: contestForm.depositConfirmed.checked,
+      rulesAccepted: contestForm.rulesAccepted.checked,
+    };
+    const errors = {};
+    if (data.lastName.length < 2) errors.lastName = "Indique ton nom.";
+    if (data.firstName.length < 2) errors.firstName = "Indique ton prénom.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = "Indique une adresse e-mail valide.";
+    if (data.username.length < 2) errors.username = "Indique le nom d’utilisateur de ton compte casino.";
+    if (!["neo-spin", "crown-slots", "evo-spin"].includes(data.casinoId)) errors.casinoId = "Choisis le casino sur lequel tu es inscrit.";
+    if (!data.ageConfirmed) errors.ageConfirmed = "Tu dois confirmer avoir 18 ans ou plus.";
+    if (!data.depositConfirmed) errors.depositConfirmed = "Tu dois confirmer le dépôt minimum de 50 €.";
+    if (!data.rulesAccepted) errors.rulesAccepted = "Tu dois accepter le règlement pour participer.";
+    contestForm.querySelectorAll("[data-error]").forEach((el) => { el.textContent = ""; });
+    Object.entries(errors).forEach(([key, message]) => {
+      const slot = contestForm.querySelector('[data-error="' + key + '"]');
+      if (slot) slot.textContent = message;
+    });
+    if (Object.keys(errors).length) return;
+    contestForm.style.display = "none";
+    document.getElementById("contestOk").style.display = "block";
+  });
+
+  if (location.hash.slice(1) === "concours") showLegal("concours");
 </script>
 </body>
 </html>
