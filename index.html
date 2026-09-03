@@ -30,21 +30,23 @@
       min-height: 44px;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      padding: 8px 12px;
+      padding: 8px 8px;
+      width: 100%;
       background: #16100a;
       border-bottom: 1px solid rgba(251, 191, 36, .35);
     }
     .giveaway p {
       color: #fff;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0;
       line-height: 1.2;
       text-transform: uppercase;
       margin: 0;
-      text-align: center;
+      flex: 1;
+      min-width: 0;
+      text-align: left;
     }
     .giveaway .btn {
       background: #fbbf24;
@@ -151,6 +153,52 @@
     .card.violet { --brand: #a855f7; --light: #d8b4fe; --btn: #7c3aed; }
     .card.blue { --brand: #1677ff; --light: #7db4ff; --btn: #1677ff; }
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
+    .card.gold,
+    .card.roulette,
+    .card.telegram,
+    .card.blackjack {
+      grid-column: 3;
+    }
+    .card.gold {
+      --brand: #fbbf24;
+      --light: #fde68a;
+      --btn: #fbbf24;
+    }
+    .card.roulette {
+      --brand: #e11d48;
+      --light: #fb7185;
+      --btn: #e11d48;
+    }
+    .card.telegram {
+      --brand: #229ed9;
+      --light: #7dd3fc;
+      --btn: #229ed9;
+    }
+    .card.telegram .kicker { color: #7dd3fc; margin: 0; }
+    .card.telegram .btn { margin-top: auto; }
+    .card.blackjack {
+      --brand: #16a34a;
+      --light: #4ade80;
+      --btn: #16a34a;
+    }
+    .chart-empty {
+      min-height: 240px;
+      width: 100%;
+      border-radius: 14px;
+      background: rgba(0,0,0,.4);
+      border: 1px solid rgba(255,255,255,.1);
+      flex: 1;
+    }
+    .video-empty {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .card.gold .btn { margin-top: auto; color: #111; }
+    .card.gold .btn:hover { background: #f59e0b; color: #111; }
+    .card.gold .kicker { color: #fbbf24; margin: 0; }
     .card-bar {
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--brand), var(--light), var(--brand), transparent);
@@ -171,9 +219,13 @@
     .card h3 { font-size: 20px; }
     .card.green h3,
     .card.violet h3,
-    .card.blue h3 { font-size: 26px; line-height: 1; }
+    .card.blue h3,
+    .card.roulette h3,
+    .card.blackjack h3 { font-size: 26px; line-height: 1; }
     .stars { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: #8b95a4; font-size: 11px; font-weight: 600; }
-    .stars b { color: var(--brand); letter-spacing: 1px; }
+    .star-row { display: inline-flex; align-items: center; gap: 2px; color: var(--brand); }
+    .star-row svg { display: block; flex-shrink: 0; }
+    .star-row .empty { opacity: .22; }
     .rank {
       border-radius: 999px;
       padding: 4px 12px;
@@ -249,26 +301,6 @@
       0%, 55% { transform: translateX(-120%); }
       100% { transform: translateX(120%); }
     }
-    .compare { background: #080b10; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
-    .table { margin-top: 32px; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; overflow: hidden; }
-    .row {
-      display: grid;
-      grid-template-columns: 1.1fr 1.4fr .9fr .5fr .7fr;
-      gap: 16px;
-      padding: 16px 20px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      align-items: center;
-    }
-    .row:first-child {
-      border-top: 0;
-      background: rgba(255,255,255,.04);
-      color: #8b95a4;
-      font-size: 11px;
-      text-transform: uppercase;
-    }
-    .row .btn { padding: 8px 12px; font-size: 12px; width: fit-content; }
-    .row.violet .btn { background: #7c3aed; }
-    .row.green .btn { background: #16a34a; }
     .why { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .why article {
       background: #0d1219;
@@ -330,7 +362,7 @@
     .rule p { margin: 0; }
     .rule strong { color: #fff; display: block; }
     .contest-form { margin-top: 20px; display: grid; gap: 14px; }
-    .contest-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contest-form .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
     .contest-form label { display: block; color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
     .contest-form input[type="text"],
     .contest-form input[type="email"] {
@@ -369,12 +401,6 @@
     .contest-form .btn { width: 100%; background: #fbbf24; color: #111; font-weight: 900; }
     .contest-form .btn:hover { background: #f59e0b; }
     .field-error, .form-error { color: #f87171; font-size: 13px; margin-top: 6px; }
-    .contest-ok {
-      display: none;
-      text-align: center;
-      padding: 28px 8px;
-    }
-    .contest-ok h2 { color: #fff; }
     @media (max-width: 860px) {
       .contest-grid, .contest-form .row, .casino-pick { grid-template-columns: 1fr; }
     }
@@ -396,15 +422,17 @@
     body.menu-open .mobile-nav { display: block; }
     @media (min-width: 640px) {
       .giveaway { min-height: 56px; gap: 16px; padding: 0 16px; }
-      .giveaway p { font-size: 14px; letter-spacing: .04em; }
+      .giveaway p { font-size: 14px; letter-spacing: .02em; }
       .giveaway .btn { font-size: 12px; padding: 7px 14px; }
     }
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
       .menu-btn { display: grid; place-items: center; }
       .cards, .why { grid-template-columns: 1fr; }
-      .row { grid-template-columns: 1fr; gap: 6px; }
-      .row:first-child { display: none; }
+      .card.gold,
+      .card.roulette,
+      .card.telegram,
+      .card.blackjack { grid-column: auto; }
       .foot { flex-direction: column; }
     }
   </style>
@@ -420,19 +448,17 @@
       MONEY <span>TOX</span>
     </a>
     <nav>
-      <a href="#casinos">Casinos</a>
-      <a href="#comparatif">Comparatif</a>
+      <a href="#casinos">Les casinos</a>
       <a href="#concours">Concours</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#comparatif" class="btn header-cta">Comparatif</a>
+    <a href="#casinos" class="btn header-cta">Voir la sélection</a>
     <button class="menu-btn" type="button" aria-label="Menu" id="menuBtn">☰</button>
   </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="#casinos">Casinos</a>
-  <a href="#comparatif">Comparatif</a>
+  <a href="#casinos">Les casinos</a>
   <a href="#concours">Concours</a>
   <a href="#faq">FAQ</a>
   <a href="#jeu-responsable">Jeu responsable</a>
@@ -450,10 +476,10 @@
           <div class="card-body">
             <div class="card-head">
               <div class="card-title">
-                <img class="casino-logo" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/630615bc64f919af214e6d46/0x0.png" alt="Neo Spin" width="52" height="52">
+                <img class="casino-logo" src="public/casinos/neospin.png" alt="Neo Spin" width="52" height="52">
                 <div>
                   <h3>Neo Spin</h3>
-                  <div class="stars"><b>★★★★☆</b> 3,8/5</div>
+                  <div class="stars" aria-label="Note Trustpilot 3,8 sur 5"><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span> 3,8/5</div>
                 </div>
               </div>
               <span class="rank">#1</span>
@@ -476,10 +502,10 @@
           <div class="card-body">
             <div class="card-head">
               <div class="card-title">
-                <img class="casino-logo casino-logo-white" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/66d608b96557657d6b44adf3/0x0.png" alt="Crown Slots" width="52" height="52">
+                <img class="casino-logo casino-logo-white" src="public/casinos/crown-slots.png" alt="Crown Slots" width="52" height="52">
                 <div>
                   <h3>Crown Slots</h3>
-                  <div class="stars"><b>★★★☆☆</b> 3,4/5</div>
+                  <div class="stars" aria-label="Note Trustpilot 3,4 sur 5"><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span> 3,4/5</div>
                 </div>
               </div>
               <span class="rank">#2</span>
@@ -502,10 +528,10 @@
           <div class="card-body">
             <div class="card-head">
               <div class="card-title">
-                <img class="casino-logo" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/608da31fc94ba90001634fe6/0x0.png" alt="Evo Spin" width="52" height="52">
+                <img class="casino-logo" src="public/casinos/evo-spin.png" alt="Evo Spin" width="52" height="52">
                 <div>
                   <h3>Evo Spin</h3>
-                  <div class="stars"><b>★★★☆☆</b> 2,6/5</div>
+                  <div class="stars" aria-label="Note Trustpilot 2,6 sur 5"><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span> 2,6/5</div>
                 </div>
               </div>
               <span class="rank">#3</span>
@@ -523,43 +549,46 @@
             <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="compare" id="comparatif">
-    <div class="wrap">
-      <p class="kicker">Comparatif</p>
-      <h2>Ce qui change vraiment</h2>
-      <div class="table">
-        <div class="row">
-          <div>Casino</div>
-          <div>Point fort</div>
-          <div>Retraits</div>
-          <div>Live</div>
-          <div>Lien</div>
-        </div>
-        <div class="row green">
-          <strong>Neo Spin</strong>
-          <div>Casino et paris sportifs</div>
-          <div>Jusqu'à 72 h</div>
-          <div>Oui</div>
-          <a class="btn" href="https://neospinlink.com/hoedheztu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
-        </div>
-        <div class="row violet">
-          <strong>Crown Slots</strong>
-          <div>Retraits rapides, catalogue large</div>
-          <div>Souvent 24 h</div>
-          <div>Oui</div>
-          <a class="btn" href="https://crownslotslink.com/hc4qhfm1n" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
-        </div>
-        <div class="row blue">
-          <strong>Evo Spin</strong>
-          <div>Catalogue dense, paiements propres</div>
-          <div>24–48 h</div>
-          <div>Oui</div>
-          <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir</a>
-        </div>
+        <article class="card gold">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <p class="kicker">Programme partenaire</p>
+            <div class="offer">
+              <strong>Ramène un ami</strong>
+              <p style="color:#fff;font-family:Oswald,Inter,sans-serif;font-size:28px;font-weight:600;margin-top:12px;letter-spacing:.03em;">Touche 20 €</p>
+              <p>Partage ton lien. Quand un ami arrive via toi, tu touches 20 €. 18+ • Jeu responsable.</p>
+            </div>
+            <a class="btn" href="#partenaire">Créer mon lien</a>
+          </div>
+        </article>
+        <article class="card roulette" id="astuce-roulette">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <h3>Astuce roulette</h3>
+            <div class="video-empty">
+              <!-- Remplacer par : <video src="..." controls playsinline></video> -->
+            </div>
+          </div>
+        </article>
+        <article class="card telegram">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <p class="kicker">Telegram</p>
+            <div class="offer">
+              <strong>L’astuce roulette pendant 30 jours consécutifs</strong>
+            </div>
+            <a class="btn" href="https://t.me/moneytox" target="_blank" rel="noopener noreferrer">Voir sur Telegram</a>
+          </div>
+        </article>
+        <article class="card blackjack" id="tableau-blackjack">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <h3>Tableau blackjack</h3>
+            <div class="chart-empty">
+              <!-- Emplacement libre : image, tableau ou autre contenu -->
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -639,7 +668,7 @@
   <h1>Confidentialité</h1>
   <p>Money Tox est un site d’information. L’hébergeur peut enregistrer des journaux techniques pour faire fonctionner le service. Money Tox ne vend pas de listes de contacts.</p>
   <h2>Formulaire concours</h2>
-  <p>Si tu t’inscris au tirage des 200 €, Money Tox collecte le nom, le prénom, l’e-mail, le nom d’utilisateur casino et le casino indiqué, uniquement pour gérer le concours et contacter un éventuel gagnant.</p>
+  <p>Si tu t’inscris au tirage des 200 €, Money Tox collecte le nom, le prénom, l’e-mail, le nom d’utilisateur (affiché en cas de victoire) et le casino indiqué, uniquement pour gérer le concours et contacter un éventuel gagnant.</p>
   <h2>Liens sortants</h2>
   <p>Les boutons vers Neo Spin, Crown Slots et Evo Spin mènent à des sites tiers. Leurs politiques s’appliquent dès que tu quittes Money Tox.</p>
   <h2>Jeu responsable</h2>
@@ -659,6 +688,29 @@
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
+<article class="wrap legal" id="partenaire">
+  <p class="kicker">Programme partenaire</p>
+  <h1>Ramène un ami, touche 20 €</h1>
+  <p>Choisis un identifiant, copie le lien, et envoie-le à tes amis. Quand quelqu’un arrive sur Money Tox via ce lien, tu touches 20 €. Offre réservée aux majeurs. 18+ • Jeu responsable.</p>
+  <div class="contest-box form" style="margin-top:28px;max-width:560px">
+    <h2>Ton lien</h2>
+    <p>L’identifiant sert uniquement à reconnaître tes parrainages. Aucun compte casino n’est créé ici.</p>
+    <form class="contest-form" id="partnerForm" novalidate>
+      <div>
+        <label for="partnerCode">Ton identifiant</label>
+        <input id="partnerCode" name="partnerCode" type="text" autocomplete="username" placeholder="ex. alex">
+        <div class="field-error" data-error="partnerCode"></div>
+      </div>
+      <div>
+        <label for="partnerLink">Ton lien</label>
+        <input id="partnerLink" name="partnerLink" type="text" readonly>
+      </div>
+      <button class="btn" type="submit">Copier mon lien</button>
+    </form>
+  </div>
+  <p style="margin-top:24px"><a href="#casinos" data-home>Retour à l’accueil</a></p>
+</article>
+
 <article class="wrap legal" id="concours">
   <p class="kicker">Concours</p>
   <h1>200 € à gagner tous les dimanches</h1>
@@ -669,7 +721,7 @@
       <div class="rule"><b>1</b><p><strong>18 ans minimum</strong>Le concours est réservé aux personnes majeures, autorisées à jouer chez l’opérateur choisi.</p></div>
       <div class="rule"><b>2</b><p><strong>Un des trois casinos</strong>Tu dois déjà avoir un compte sur Neo Spin, Crown Slots ou Evo Spin, et indiquer lequel.</p></div>
       <div class="rule"><b>3</b><p><strong>Dépôt minimum 50 €</strong>Un dépôt d’au moins 50 € doit être effectué sur ce compte pendant la semaine du tirage (lundi 00h01 au dimanche 19h59, heure de Paris).</p></div>
-      <div class="rule"><b>4</b><p><strong>Nom d’utilisateur exact</strong>Le nom d’utilisateur saisi doit être identique à celui de ton compte casino. Un identifiant incorrect annule la participation.</p></div>
+      <div class="rule"><b>4</b><p><strong>Nom d’utilisateur</strong>Le nom d’utilisateur est affiché en cas de victoire. Choisis celui que tu veux voir apparaître.</p></div>
       <div class="rule"><b>5</b><p><strong>Une seule participation</strong>Une inscription par personne, par e-mail et par nom d’utilisateur. Les doublons sont retirés du tirage.</p></div>
       <div class="rule"><b>6</b><p><strong>Tirage du dimanche</strong>200 € sont mis en jeu chaque dimanche. Money Tox contacte le gagnant par e-mail. Sans réponse sous 72 h, un autre tirage est effectué.</p></div>
       <p>Money Tox n’est pas un casino. Aucun gain n’est garanti. Joue uniquement avec de l’argent que tu peux te permettre de perdre.</p>
@@ -677,11 +729,6 @@
     <div class="contest-box form">
       <h2>Formulaire d’inscription</h2>
       <p>Clique sur le casino où tu as déjà un compte, puis envoie tes infos.</p>
-      <div class="contest-ok" id="contestOk">
-        <h2>Participation enregistrée</h2>
-        <p>Ton inscription au tirage de 200 € est prise en compte, sous réserve du dépôt minimum de 50 € et d’un compte valide. Si tu es tiré au sort, on t’écrit par e-mail.</p>
-        <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
-      </div>
       <form class="contest-form" id="contestForm" novalidate>
         <div class="row">
           <div>
@@ -694,37 +741,35 @@
             <input id="firstName" name="firstName" type="text" autocomplete="given-name">
             <div class="field-error" data-error="firstName"></div>
           </div>
+          <div>
+            <label for="username">Nom utilisateur (victoire)</label>
+            <input id="username" name="username" type="text" autocomplete="username">
+            <div class="field-error" data-error="username"></div>
+          </div>
         </div>
         <div>
-          <label for="email">Adresse e-mail</label>
+          <label for="email">E-mail</label>
           <input id="email" name="email" type="email" autocomplete="email">
           <div class="field-error" data-error="email"></div>
         </div>
         <div>
-          <label for="username">Nom d’utilisateur casino</label>
-          <input id="username" name="username" type="text" autocomplete="username">
-          <div class="field-error" data-error="username"></div>
-        </div>
-        <div>
-          <label>Casino sur lequel tu es inscrit</label>
+          <label>Casino</label>
           <div class="casino-pick" id="casinoPick">
-            <button type="button" data-casino="neo-spin"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/630615bc64f919af214e6d46/0x0.png" alt="">Neo Spin</button>
-            <button type="button" data-casino="crown-slots"><img class="white" src="https://s3-eu-west-1.amazonaws.com/tpd/logos/66d608b96557657d6b44adf3/0x0.png" alt="">Crown Slots</button>
-            <button type="button" data-casino="evo-spin"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/608da31fc94ba90001634fe6/0x0.png" alt="">Evo Spin</button>
+            <button type="button" data-casino="neo-spin"><img src="public/casinos/neospin.png" alt="">Neo Spin</button>
+            <button type="button" data-casino="crown-slots"><img class="white" src="public/casinos/crown-slots.png" alt="">Crown Slots</button>
+            <button type="button" data-casino="evo-spin"><img src="public/casinos/evo-spin.png" alt="">Evo Spin</button>
           </div>
           <input type="hidden" name="casinoId" id="casinoId">
           <div class="field-error" data-error="casinoId"></div>
         </div>
         <div class="checks">
-          <label><input type="checkbox" name="ageConfirmed"> J’ai 18 ans ou plus.</label>
+          <label><input type="checkbox" name="ageConfirmed"> J’ai 18+.</label>
           <div class="field-error" data-error="ageConfirmed"></div>
-          <label><input type="checkbox" name="depositConfirmed"> Je confirme un dépôt d’au moins 50 € sur le casino choisi pendant la semaine du tirage.</label>
-          <div class="field-error" data-error="depositConfirmed"></div>
-          <label><input type="checkbox" name="rulesAccepted"> J’accepte le règlement du concours Money Tox.</label>
+          <label><input type="checkbox" name="rulesAccepted"> J’accepte le règlement.</label>
           <div class="field-error" data-error="rulesAccepted"></div>
         </div>
         <p class="form-error" id="contestFormError"></p>
-        <button class="btn" type="submit">Valider ma participation</button>
+        <button class="btn" type="submit">Valider</button>
       </form>
     </div>
   </div>
@@ -738,8 +783,7 @@
         <p>Jouer comporte des risques. Jouez de façon responsable.</p>
       </div>
       <div class="flinks">
-        <a href="#casinos">Casinos</a>
-        <a href="#comparatif">Comparatif</a>
+        <a href="#casinos">Les casinos</a>
         <a href="#concours">Concours</a>
         <a href="#faq">FAQ</a>
         <a href="#jeu-responsable">Jeu responsable</a>
@@ -774,12 +818,12 @@
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const id = link.getAttribute("href").slice(1);
-      if (["jeu-responsable", "confidentialite", "conditions", "concours"].includes(id)) {
+      if (["jeu-responsable", "confidentialite", "conditions", "concours", "partenaire"].includes(id)) {
         event.preventDefault();
         showLegal(id);
         return;
       }
-      if (link.hasAttribute("data-home") || id === "top" || id === "casinos" || id === "comparatif" || id === "faq") {
+      if (link.hasAttribute("data-home") || id === "top" || id === "casinos" || id === "faq") {
         showHome();
       }
     });
@@ -813,17 +857,15 @@
       username: document.getElementById("username").value.trim(),
       casinoId: document.getElementById("casinoId").value,
       ageConfirmed: contestForm.ageConfirmed.checked,
-      depositConfirmed: contestForm.depositConfirmed.checked,
       rulesAccepted: contestForm.rulesAccepted.checked,
     };
     const errors = {};
     if (data.lastName.length < 2) errors.lastName = "Indique ton nom.";
     if (data.firstName.length < 2) errors.firstName = "Indique ton prénom.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = "Indique une adresse e-mail valide.";
-    if (data.username.length < 2) errors.username = "Indique le nom d’utilisateur de ton compte casino.";
+    if (data.username.length < 2) errors.username = "Indique un nom d’utilisateur.";
     if (!["neo-spin", "crown-slots", "evo-spin"].includes(data.casinoId)) errors.casinoId = "Choisis le casino sur lequel tu es inscrit.";
     if (!data.ageConfirmed) errors.ageConfirmed = "Tu dois confirmer avoir 18 ans ou plus.";
-    if (!data.depositConfirmed) errors.depositConfirmed = "Tu dois confirmer le dépôt minimum de 50 €.";
     if (!data.rulesAccepted) errors.rulesAccepted = "Tu dois accepter le règlement pour participer.";
     contestForm.querySelectorAll("[data-error]").forEach((el) => { el.textContent = ""; });
     Object.entries(errors).forEach(([key, message]) => {
@@ -831,11 +873,59 @@
       if (slot) slot.textContent = message;
     });
     if (Object.keys(errors).length) return;
-    contestForm.style.display = "none";
-    document.getElementById("contestOk").style.display = "block";
+    const casinoNames = { "neo-spin": "Neo Spin", "crown-slots": "Crown Slots", "evo-spin": "Evo Spin" };
+    const body = [
+      "Nouvelle participation concours Money Tox",
+      "",
+      "Nom : " + data.lastName,
+      "Prénom : " + data.firstName,
+      "Nom utilisateur : " + data.username,
+      "E-mail : " + data.email,
+      "Casino : " + (casinoNames[data.casinoId] || data.casinoId)
+    ].join("\n");
+    location.href = "mailto:moneytox3@gmail.com?subject=" + encodeURIComponent("Participation concours Money Tox") + "&body=" + encodeURIComponent(body);
   });
 
   if (location.hash.slice(1) === "concours") showLegal("concours");
+  if (location.hash.slice(1) === "partenaire") showLegal("partenaire");
+
+  const partnerForm = document.getElementById("partnerForm");
+  const partnerCode = document.getElementById("partnerCode");
+  const partnerLink = document.getElementById("partnerLink");
+  function slugifyPartner(value) {
+    return value
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 32);
+  }
+  function partnerUrl(code) {
+    const base = location.href.split("#")[0].split("?")[0];
+    const sep = base.indexOf("?") >= 0 ? "&" : "?";
+    return base + sep + "ref=" + encodeURIComponent(code);
+  }
+  partnerCode.addEventListener("input", () => {
+    const code = slugifyPartner(partnerCode.value);
+    partnerLink.value = code ? partnerUrl(code) : "";
+    partnerForm.querySelector('[data-error="partnerCode"]').textContent = "";
+  });
+  partnerForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const code = slugifyPartner(partnerCode.value);
+    const slot = partnerForm.querySelector('[data-error="partnerCode"]');
+    if (!code) {
+      slot.textContent = "Indique un identifiant (lettres ou chiffres).";
+      return;
+    }
+    const url = partnerUrl(code);
+    partnerLink.value = url;
+    navigator.clipboard.writeText(url).then(() => {
+      partnerForm.querySelector(".btn").textContent = "Lien copié";
+      setTimeout(() => { partnerForm.querySelector(".btn").textContent = "Copier mon lien"; }, 2000);
+    });
+  });
 </script>
 </body>
 </html>
