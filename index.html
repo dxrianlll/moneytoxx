@@ -48,18 +48,19 @@
       text-transform: uppercase;
       text-align: center;
       white-space: nowrap;
+      font-size: 11px;
     }
     .giveaway .btn {
-      background: #fbbf24;
-      color: #111;
-      padding: 0 20px;
+      background: #1677ff;
+      color: #fff;
+      padding: 0 16px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 900;
-      height: 40px;
+      height: 36px;
       flex-shrink: 0;
     }
-    .giveaway .btn:hover { background: #f59e0b; }
+    .giveaway .btn:hover { background: #2f8cff; }
     header {
       position: fixed;
       inset: 0 0 auto;
@@ -130,6 +131,7 @@
     h1 { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; }
     h1 span { color: #1677ff; }
     section { padding: 90px 0; }
+    section.criteria { padding-top: 36px; }
     h2 { margin-top: 8px; font-size: clamp(28px, 5vw, 46px); }
     .muted { margin-top: 10px; color: #8b95a4; max-width: 560px; }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
@@ -154,9 +156,7 @@
     .card.violet { --brand: #a855f7; --light: #d8b4fe; --btn: #7c3aed; }
     .card.blue { --brand: #1677ff; --light: #7db4ff; --btn: #1677ff; }
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
-    .card.gold,
-    .card.roulette,
-    .card.telegram {
+    .card.gold {
       grid-column: 3;
     }
     .card.blackjack {
@@ -169,20 +169,6 @@
       --btn: #fbbf24;
       margin-top: 24px;
     }
-    .card.roulette {
-      --brand: #e11d48;
-      --light: #fb7185;
-      --btn: #e11d48;
-      margin-top: 24px;
-    }
-    .card.telegram {
-      --brand: #229ed9;
-      --light: #7dd3fc;
-      --btn: #229ed9;
-      margin-top: 24px;
-    }
-    .card.telegram .kicker { color: #7dd3fc; margin: 0; }
-    .card.telegram .btn { margin-top: auto; }
     .card.blackjack {
       --brand: #16a34a;
       --light: #4ade80;
@@ -239,13 +225,6 @@
       .bj-full { display: none; }
       .bj-short { display: inline; }
     }
-    .video-empty {
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      border-radius: 14px;
-      background: #000;
-      border: 1px solid rgba(255,255,255,.1);
-    }
     .card.gold .btn { margin-top: auto; color: #111; }
     .card.gold .btn:hover { background: #f59e0b; color: #111; }
     .card.gold .kicker { color: #fbbf24; margin: 0; }
@@ -273,7 +252,6 @@
     .card.green h3,
     .card.violet h3,
     .card.blue h3,
-    .card.roulette h3,
     .card.blackjack h3 { font-size: 26px; line-height: 1; }
     .stars { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: #8b95a4; font-size: 11px; font-weight: 600; }
     .star-row { display: inline-flex; align-items: center; gap: 2px; color: var(--brand); }
@@ -418,19 +396,11 @@
       padding: 20px;
     }
     .why p { margin-top: 8px; color: #8b95a4; font-size: 14px; }
-    .cta {
-      background: #0d1219;
-      border: 1px solid rgba(22,119,255,.35);
-      border-radius: 28px;
-      padding: 72px 24px;
-      text-align: center;
-      box-shadow: 0 0 90px rgba(22,119,255,.08);
-    }
-    .cta p { max-width: 520px; margin: 14px auto 0; color: #8b95a4; }
-    .cta .btn { margin-top: 24px; }
     .legal { display: none; padding: 180px 0 80px; max-width: 680px; }
     .legal h1 { font-size: 40px; }
+    .legal .updated { margin-top: 12px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
     .legal p, .legal li { margin-top: 14px; color: #8b95a4; }
+    .legal ul { margin: 8px 0 0 22px; }
     .legal h2 { margin-top: 28px; font-size: 22px; }
     .legal a { color: #1677ff; text-decoration: underline; }
     #concours.legal { max-width: 1180px; }
@@ -501,11 +471,14 @@
       .contest-grid, .contest-form .row, .casino-pick { grid-template-columns: 1fr; }
     }
     footer { border-top: 1px solid rgba(255,255,255,.08); padding: 50px 0 28px; }
-    .foot { display: flex; justify-content: space-between; gap: 40px; }
+    .foot { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
     .foot p { margin-top: 12px; max-width: 380px; color: #8b95a4; font-size: 13px; }
-    .flinks { display: grid; grid-template-columns: repeat(2, auto); gap: 10px 36px; color: #8b95a4; font-size: 13px; }
+    .foot h3 { margin: 0 0 14px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #fff; }
+    .age-badge { display: inline-flex; margin-top: 12px; padding: 4px 12px; border: 1px solid rgba(251,191,36,.35); border-radius: 999px; background: rgba(251,191,36,.1); color: #fcd34d; font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+    .flinks { display: flex; flex-direction: column; gap: 10px; color: #8b95a4; font-size: 13px; }
     .flinks a:hover { color: #fff; }
-    .copy { border-top: 1px solid rgba(255,255,255,.08); margin-top: 36px; padding-top: 16px; color: #8b95a4; font-size: 11px; text-align: center; }
+    .copy { border-top: 1px solid rgba(255,255,255,.08); margin-top: 36px; padding-top: 16px; color: #8b95a4; font-size: 11px; text-align: center; line-height: 1.6; }
+    .copy p + p { margin-top: 6px; }
     .mobile-nav {
       display: none;
       position: fixed;
@@ -518,18 +491,18 @@
     body.menu-open .mobile-nav { display: block; }
     @media (min-width: 640px) {
       .giveaway { padding: 10px 16px; gap: 14px; }
-      .giveaway .btn { height: 44px; padding: 0 24px; font-size: 16px; }
+      .giveaway p { font-size: clamp(13px, 4.2cqi, 22px); }
+      .giveaway .btn { height: 44px; padding: 0 24px; font-size: 16px; background: #fbbf24; color: #111; }
+      .giveaway .btn:hover { background: #f59e0b; }
     }
     @media (max-width: 639px) {
-      .giveaway p { white-space: normal; }
+      .giveaway p { white-space: normal; font-size: 11px; }
     }
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
       .menu-btn { display: grid; place-items: center; }
       .cards, .why { grid-template-columns: 1fr; }
       .card.gold,
-      .card.roulette,
-      .card.telegram,
       .card.blackjack { grid-column: auto; }
       .casino-logo,
       .casino-pick img {
@@ -544,7 +517,10 @@
         min-width: 52px !important;
         min-height: 52px !important;
       }
-      .foot { flex-direction: column; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .foot { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -573,8 +549,9 @@
   <a href="#casinos">Les casinos</a>
   <a href="#concours">Concours</a>
   <a href="#jeu-responsable">Jeu responsable</a>
-  <a href="#confidentialite">Confidentialité</a>
-  <a href="#conditions">Conditions</a>
+  <a href="#confidentialite">Politique de confidentialité</a>
+  <a href="#mentions-legales">Mentions légales</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <div id="home">
@@ -693,37 +670,6 @@
             <a class="btn" href="https://evospinlink.com/hpnbzoodu" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
           </div>
         </article>
-        <article class="card gold">
-          <div class="card-bar"></div>
-          <div class="card-body">
-            <p class="kicker">Programme partenaire</p>
-            <div class="offer">
-              <strong>Ramène un ami</strong>
-              <p style="color:#fff;font-family:Oswald,Inter,sans-serif;font-size:28px;font-weight:600;margin-top:12px;letter-spacing:.03em;">Touche 20 €</p>
-              <p>Partage ton lien. Quand un ami arrive via toi, tu touches 20 €. 18+ • Jeu responsable.</p>
-            </div>
-            <a class="btn" href="#partenaire">Créer mon lien</a>
-          </div>
-        </article>
-        <article class="card roulette" id="astuce-roulette">
-          <div class="card-bar"></div>
-          <div class="card-body">
-            <h3>Astuce roulette</h3>
-            <div class="video-empty">
-              <!-- Remplacer par : <video src="..." controls playsinline></video> -->
-            </div>
-          </div>
-        </article>
-        <article class="card telegram">
-          <div class="card-bar"></div>
-          <div class="card-body">
-            <p class="kicker">Telegram</p>
-            <div class="offer">
-              <strong>L’astuce roulette pendant 30 jours consécutifs</strong>
-            </div>
-            <a class="btn" href="https://t.me/moneytox" target="_blank" rel="noopener noreferrer">Voir sur Telegram</a>
-          </div>
-        </article>
         <article class="card blackjack" id="tableau-blackjack">
           <div class="card-bar"></div>
           <div class="card-body">
@@ -792,41 +738,42 @@
             </div>
           </div>
         </article>
+        <article class="card gold">
+          <div class="card-bar"></div>
+          <div class="card-body">
+            <p class="kicker">Programme partenaire</p>
+            <div class="offer">
+              <strong>Ramène un ami</strong>
+              <p style="color:#fff;font-family:Oswald,Inter,sans-serif;font-size:28px;font-weight:600;margin-top:12px;letter-spacing:.03em;">Touche 20 €</p>
+              <p>Partage ton lien. Quand un ami arrive via toi, tu touches 20 €. 18+ • Jeu responsable.</p>
+            </div>
+            <a class="btn" href="#partenaire">Recevoir mon lien</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="criteria">
     <div class="wrap">
-      <p class="kicker">Méthode</p>
-      <h2>Moins de bruit, plus de critères</h2>
+      <p class="kicker">Les critères qui comptent vraiment</p>
       <div class="why">
         <article>
-          <h3>Liste courte</h3>
-          <p>Trois casinos, pas une page infinie. Si ça ne se distingue pas, ça n’est pas ici.</p>
+          <h3>3 casinos, pas un catalogue</h3>
+          <p>Money Tox compare uniquement Neo Spin, Crown Slots et Evo Spin. Tu vois tout de suite s’il s’agit d’un casino seul ou aussi de paris sportifs, sans une liste de trente logos.</p>
         </article>
         <article>
-          <h3>Retraits d’abord</h3>
-          <p>Un bonus tape-à-l’œil ne sert à rien si l’argent met une semaine à sortir.</p>
+          <h3>2 offres, bien séparées</h3>
+          <p>Chaque opérateur propose 2 bonus de premier dépôt. On les affiche l’un sous l’autre — pourcentage, plafond, free spins — pour que tu compares sans tout mélanger.</p>
         </article>
         <article>
-          <h3>Jeu responsable</h3>
-          <p>Jouer comporte des risques. Jouez de façon responsable.</p>
+          <h3>Retraits avant le bonus</h3>
+          <p>Un 125 % ne sert à rien si l’argent reste bloqué. On indique le délai de retrait et le dépôt minimum, souvent 20 €, avant que tu cliques.</p>
         </article>
         <article>
-          <h3>18+ non négociable</h3>
-          <p>Le jeu reste un loisir. Budget, pauses, et aide si ça dérape.</p>
+          <h3>Réservé aux majeurs</h3>
+          <p>Le jeu d’argent est interdit aux moins de 18 ans. Fixe un budget avant de déposer, ne joue pas pour te refaire, et contacte Joueurs Info Service si ça n’est plus un loisir.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="cta">
-        <h2>Commence par la sélection, pas par le premier pub.</h2>
-        <p>Compare les trois, ouvre celui qui colle à ton usage, lis les conditions avant de déposer.</p>
-        <a href="#casinos" class="btn">Revenir aux casinos</a>
       </div>
     </div>
   </section>
@@ -834,56 +781,201 @@
 
 <article class="wrap legal" id="jeu-responsable">
   <h1>Jeu responsable</h1>
-  <p>Money Tox n’est pas un casino. Le jeu d’argent doit rester un divertissement, jamais un moyen de gagner de l’argent ou de rembourser des dettes.</p>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Money Tox n’est pas un casino. Le jeu d’argent doit rester un divertissement, jamais un moyen de gagner de l’argent, de rembourser des dettes ou de « se refaire ».</p>
+  <h2>Interdit aux moins de 18 ans</h2>
+  <p>Les jeux d’argent sont interdits aux mineurs. Ne t’inscris pas chez un opérateur, ne dépose pas, et ne participe pas au concours si tu as moins de 18 ans.</p>
   <h2>Règles simples</h2>
-  <p>Joue uniquement si tu as 18 ans ou plus. Fixe un budget avant de déposer. Ne joue pas avec l’argent destiné au loyer, à l’alimentation ou aux factures. Arrête-toi si le jeu n’est plus un plaisir.</p>
-  <h2>Aide</h2>
-  <p>En France, Joueurs Info Service : 09 74 75 13 13 et <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener noreferrer">joueurs-info-service.fr</a>.</p>
+  <ul>
+    <li>Fixe un budget avant de déposer, et tiens-toi-y.</li>
+    <li>Ne joue pas avec l’argent du loyer, de l’alimentation, des factures ou d’un crédit.</li>
+    <li>Ne joue pas pour récupérer une perte.</li>
+    <li>Arrête-toi si le jeu n’est plus un plaisir.</li>
+    <li>Ne joue pas sous l’effet de l’alcool, de drogues ou d’un fort stress.</li>
+    <li>Prends des pauses. Le jeu ne doit pas remplacer le sommeil, le travail ou les proches.</li>
+  </ul>
+  <h2>Signes d’alerte</h2>
+  <p>Demande de l’aide si tu reconnais plusieurs de ces situations :</p>
+  <ul>
+    <li>tu caches tes mises ou tes pertes ;</li>
+    <li>tu empruntes pour jouer ;</li>
+    <li>tu joues plus longtemps ou plus souvent que prévu ;</li>
+    <li>le jeu crée des tensions avec tes proches ;</li>
+    <li>tu te sens irritable quand tu ne joues pas.</li>
+  </ul>
+  <h2>Aide en France</h2>
+  <p>Joueurs Info Service : <a href="tel:+33974751313">09 74 75 13 13</a> (appel non surtaxé), 7 jours sur 7, et <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener noreferrer">joueurs-info-service.fr</a>.</p>
+  <p>Tu peux aussi te renseigner auprès de l’Autorité nationale des jeux (<a href="https://anj.fr" target="_blank" rel="noopener noreferrer">anj.fr</a>).</p>
+  <h2>Outils chez les opérateurs</h2>
+  <p>La plupart des casinos proposent des plafonds de dépôt, des limites de temps, une pause temporaire ou une auto-exclusion. Money Tox ne gère pas ces outils : ils se règlent sur le compte de l’opérateur.</p>
+  <h2>Tableau blackjack et astuces</h2>
+  <p>Un tableau de stratégie ou une astuce roulette réduit parfois l’écart théorique. Cela ne garantit aucun gain. Ne mise jamais plus pour « appliquer une méthode ».</p>
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <article class="wrap legal" id="confidentialite">
-  <h1>Confidentialité</h1>
-  <p>Money Tox est un site d’information. L’hébergeur peut enregistrer des journaux techniques pour faire fonctionner le service. Money Tox ne vend pas de listes de contacts.</p>
-  <h2>Formulaire concours</h2>
-  <p>Si tu t’inscris au tirage des 200 €, Money Tox collecte le nom, le prénom, l’e-mail, le nom d’utilisateur (affiché en cas de victoire) et le casino indiqué, uniquement pour gérer le concours et contacter un éventuel gagnant.</p>
+  <h1>Politique de confidentialité</h1>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Money Tox respecte le RGPD et la loi Informatique et Libertés. Cette page décrit quelles données peuvent être traitées quand tu consultes le site, t’inscris au concours ou crées un lien partenaire.</p>
+  <h2>Responsable du traitement</h2>
+  <p>Le responsable est l’éditeur de Money Tox. Contact : <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>.</p>
+  <h2>Données collectées</h2>
+  <ul>
+    <li><strong>Journaux techniques :</strong> adresse IP, navigateur, pages visitées, date et heure.</li>
+    <li><strong>Formulaire concours :</strong> nom, prénom, e-mail, nom d’utilisateur, casino indiqué, confirmation 18+ / règlement.</li>
+    <li><strong>Lien partenaire :</strong> l’e-mail que tu indiques pour recevoir ton lien. Aucun compte casino n’est créé ici.</li>
+    <li><strong>E-mails que tu envoies :</strong> le contenu du message et l’adresse utilisée.</li>
+  </ul>
+  <p>Money Tox ne revend pas de listes de contacts.</p>
+  <h2>Finalités</h2>
+  <ul>
+    <li>Faire fonctionner et sécuriser le site.</li>
+    <li>Gérer le tirage des 200 € et contacter un gagnant.</li>
+    <li>Répondre à une demande de contact.</li>
+  </ul>
+  <h2>Durées de conservation</h2>
+  <ul>
+    <li>Journaux techniques : durée habituelle de l’hébergeur.</li>
+    <li>Inscriptions concours : le temps du tirage, puis jusqu’à 12 mois pour une réclamation.</li>
+    <li>Messages de contact : le temps de traiter la demande.</li>
+  </ul>
+  <h2>Destinataires</h2>
+  <p>Les données restent chez Money Tox et, le cas échéant, chez l’hébergeur. Un opérateur ne les reçoit que si c’est nécessaire pour vérifier une victoire.</p>
   <h2>Liens sortants</h2>
   <p>Les boutons vers Neo Spin, Crown Slots et Evo Spin mènent à des sites tiers. Leurs politiques s’appliquent dès que tu quittes Money Tox.</p>
-  <h2>Jeu responsable</h2>
-  <p>Jouer comporte des risques. Jouez de façon responsable.</p>
+  <h2>Tes droits</h2>
+  <p>Tu peux demander l’accès, la rectification, l’effacement, la limitation ou l’opposition. Écris à <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>. Tu peux aussi saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a>).</p>
+  <h2>Mineurs</h2>
+  <p>Le site s’adresse aux majeurs. Aide : Joueurs Info Service, 09 74 75 13 13.</p>
+  <h2>Cookies</h2>
+  <p>Voir la <a href="#cookies">politique cookies</a>.</p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
+</article>
+
+<article class="wrap legal" id="cookies">
+  <h1>Politique de cookies</h1>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Un cookie est un petit fichier enregistré sur ton appareil. Cette page décrit ce que Money Tox utilise, et ce qui peut se passer quand tu quittes le site.</p>
+  <h2>Cookies strictement nécessaires</h2>
+  <p>Money Tox peut s’appuyer sur des cookies ou équivalents techniques indispensables au fonctionnement. Ils ne servent pas à de la publicité ciblée sur ce site.</p>
+  <h2>Mesure d’audience</h2>
+  <p>Aucun outil de mesure d’audience publicitaire n’est installé par défaut. Si un tel outil est ajouté plus tard, cette page sera mise à jour.</p>
+  <h2>Sites tiers</h2>
+  <p>Quand tu cliques vers Neo Spin, Crown Slots ou Evo Spin, ces sites peuvent déposer leurs propres cookies. Money Tox ne contrôle pas ces dépôts.</p>
+  <h2>Lien partenaire</h2>
+  <p>Tu demandes ton lien par e-mail. Money Tox t’envoie ensuite un lien personnel. Ce n’est pas un cookie publicitaire.</p>
+  <h2>Comment refuser les cookies</h2>
+  <ul>
+    <li>Paramètres du navigateur : bloquer ou supprimer les cookies.</li>
+    <li>Mode navigation privée.</li>
+    <li>Sur les sites des opérateurs : leurs bandeaux cookies.</li>
+  </ul>
+  <p>Question cookies : <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>. Voir aussi la <a href="#confidentialite">politique de confidentialité</a>.</p>
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <article class="wrap legal" id="conditions">
   <h1>Conditions d’utilisation</h1>
-  <p>Money Tox est un comparateur indépendant des opérateurs présentés. Aucun compte joueur n’est ouvert ici.</p>
-  <h2>Contenu</h2>
-  <p>Les notes et tableaux sont éditoriaux. Ils ne constituent pas un conseil financier. Les offres peuvent changer chez l’opérateur sans préavis.</p>
-  <h2>Jeu responsable</h2>
-  <p>Jouer comporte des risques. Jouez de façon responsable.</p>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>En consultant Money Tox, tu acceptes ces conditions. Money Tox est un comparateur indépendant. Aucun compte joueur n’est ouvert ici.</p>
+  <h2>Objet du site</h2>
+  <p>Money Tox publie une sélection courte de casinos, des informations sur les offres, un tableau de blackjack, un concours éditorial et un programme partenaire.</p>
+  <h2>Accès et âge</h2>
+  <p>Le contenu s’adresse exclusivement aux personnes de 18 ans et plus, autorisées à jouer dans leur pays. Les mineurs n’ont pas le droit de participer au concours.</p>
+  <h2>Contenu éditorial</h2>
+  <p>Les notes, commentaires et tableaux sont éditoriaux. Ils ne constituent pas un conseil financier. Les offres peuvent changer chez l’opérateur sans préavis. Vérifie toujours les conditions sur le site de l’opérateur.</p>
+  <h2>Concours</h2>
+  <p>Le tirage des 200 € est organisé par Money Tox, indépendamment des casinos. Les règles figurent sur la page <a href="#concours">Concours</a>.</p>
+  <h2>Affiliation</h2>
+  <p>Certains liens sont affiliés. Voir la <a href="#affiliation">page Affiliation</a>.</p>
   <h2>Responsabilité</h2>
-  <p>Money Tox ne garantit aucun gain, aucun délai de paiement, ni l’accessibilité d’un opérateur dans ton pays.</p>
+  <p>Money Tox ne garantit aucun gain, aucun délai de paiement, ni l’accessibilité d’un opérateur dans ton pays. Money Tox n’est pas partie au contrat que tu conclus avec un casino.</p>
+  <h2>Données personnelles</h2>
+  <p>Voir la <a href="#confidentialite">politique de confidentialité</a>.</p>
+  <h2>Droit applicable</h2>
+  <p>Ces conditions sont régies par le droit français. Contact : <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>.</p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
+</article>
+
+<article class="wrap legal" id="mentions-legales">
+  <h1>Mentions légales</h1>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN), les informations suivantes identifient l’éditeur et l’hébergeur.</p>
+  <h2>Éditeur</h2>
+  <p>Money Tox est un site éditorial indépendant de comparaison de casinos en ligne. Il n’est pas un opérateur de jeux et n’ouvre aucun compte joueur.</p>
+  <ul>
+    <li><strong>Nom public :</strong> Money Tox</li>
+    <li><strong>Nature :</strong> site d’information et de comparaison</li>
+    <li><strong>Contact :</strong> <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a></li>
+  </ul>
+  <h2>Directeur de la publication</h2>
+  <p>Le directeur de la publication est l’éditeur du site Money Tox, joignable à <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>.</p>
+  <h2>Hébergement</h2>
+  <p>Le site peut être publié sur le prestataire choisi par l’éditeur (hébergeur web, GitHub Pages ou équivalent). Pour connaître l’hébergeur actuel, écris à <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>.</p>
+  <h2>Propriété intellectuelle</h2>
+  <p>Les textes, tableaux et mises en page de Money Tox sont protégés. Les logos des casinos restent la propriété de leurs titulaires.</p>
+  <h2>Liens affiliés</h2>
+  <p>Certains boutons mènent vers Neo Spin, Crown Slots ou Evo Spin via des liens d’affiliation. Détails : <a href="#affiliation">page Affiliation</a>.</p>
+  <h2>Données personnelles</h2>
+  <p>Voir la <a href="#confidentialite">politique de confidentialité</a> et la <a href="#cookies">politique cookies</a>.</p>
+  <h2>Droit applicable</h2>
+  <p>Les présentes mentions sont régies par le droit français.</p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
+</article>
+
+<article class="wrap legal" id="affiliation">
+  <h1>Affiliation et publicité</h1>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Money Tox est un site indépendant, financé notamment par l’affiliation. Cette page explique comment ça marche.</p>
+  <h2>Liens affiliés</h2>
+  <p>Les boutons vers Neo Spin, Crown Slots et Evo Spin peuvent être des liens d’affiliation. Si tu t’inscris ou déposes via ce lien, Money Tox peut recevoir une commission. Cela ne change pas le prix que tu paies.</p>
+  <h2>Indépendance éditoriale</h2>
+  <p>Les notes et commentaires restent éditoriaux. Une rémunération possible n’est pas une garantie que l’offre est la meilleure pour toi.</p>
+  <h2>Ce que Money Tox n’est pas</h2>
+  <ul>
+    <li>pas un casino, pas un bookmaker ;</li>
+    <li>pas le service client des opérateurs ;</li>
+    <li>pas un conseil en investissement.</li>
+  </ul>
+  <h2>Programme partenaire</h2>
+  <p>Le <a href="#partenaire">programme partenaire</a> te permet de partager un lien Money Tox. Il est distinct des programmes d’affiliation des casinos.</p>
+  <h2>Contact</h2>
+  <p>Question affiliation : <a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a>.</p>
+  <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
+</article>
+
+<article class="wrap legal" id="contact">
+  <h1>Contact</h1>
+  <p class="updated">Mise à jour le 9 septembre 2026</p>
+  <p>Money Tox n’a pas d’agence d’accueil. Pour toute question sur le site, le concours, un lien partenaire ou tes données, écris à :</p>
+  <p><a href="mailto:moneytox3@gmail.com">moneytox3@gmail.com</a></p>
+  <h2>Précise dans ton message</h2>
+  <ul>
+    <li>l’objet (concours, partenaire, confidentialité, autre) ;</li>
+    <li>ton nom d’utilisateur si ça concerne un tirage ;</li>
+    <li>le casino concerné, sans envoyer de mot de passe.</li>
+  </ul>
+  <h2>Ce que Money Tox ne traite pas</h2>
+  <p>Les retraits, bonus et blocages de compte se règlent chez l’opérateur, pas ici.</p>
+  <h2>Aide jeu responsable</h2>
+  <p>Si le jeu devient un problème : Joueurs Info Service, <a href="tel:+33974751313">09 74 75 13 13</a>, <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener noreferrer">joueurs-info-service.fr</a>.</p>
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
 <article class="wrap legal" id="partenaire">
   <p class="kicker">Programme partenaire</p>
-  <h1>Ramène un ami, touche 20 €</h1>
-  <p>Choisis un identifiant, copie le lien, et envoie-le à tes amis. Quand quelqu’un arrive sur Money Tox via ce lien, tu touches 20 €. Offre réservée aux majeurs. 18+ • Jeu responsable.</p>
+  <h1>Reçois ton propre lien</h1>
+  <p>Partage-le et perçois une commission de 20 € pour chaque personne qui s’inscrit via ton lien. Offre réservée aux majeurs. 18+ • Jeu responsable.</p>
   <div class="contest-box form" style="margin-top:28px;max-width:560px">
     <h2>Ton lien</h2>
-    <p>L’identifiant sert uniquement à reconnaître tes parrainages. Aucun compte casino n’est créé ici.</p>
+    <p>Reçois ton lien sous 48H par mail, de la part de notre équipe.</p>
     <form class="contest-form" id="partnerForm" novalidate>
       <div>
-        <label for="partnerCode">Ton identifiant</label>
-        <input id="partnerCode" name="partnerCode" type="text" autocomplete="username" placeholder="ex. alex">
-        <div class="field-error" data-error="partnerCode"></div>
+        <label for="partnerEmail">E-mail</label>
+        <input id="partnerEmail" name="email" type="email" autocomplete="email" placeholder="toi@email.com">
+        <div class="field-error" data-error="partnerEmail"></div>
       </div>
-      <div>
-        <label for="partnerLink">Ton lien</label>
-        <input id="partnerLink" name="partnerLink" type="text" readonly>
-      </div>
-      <button class="btn" type="submit">Copier mon lien</button>
+      <button class="btn" type="submit">Recevoir mon lien</button>
     </form>
   </div>
   <p style="margin-top:24px"><a href="#casinos" data-home>Retour à l’accueil</a></p>
@@ -958,17 +1050,43 @@
     <div class="foot">
       <div>
         <div class="logo">MONEY <span>TOX</span></div>
-        <p>Jouer comporte des risques. Jouez de façon responsable.</p>
+        <p>Comparateur éditorial de casinos en ligne. Money Tox n’est pas un opérateur de jeux. Aucun compte joueur n’est ouvert ici.</p>
+        <p class="age-badge">18+ Interdit aux mineurs</p>
+        <p>Jouer comporte des risques : endettement, isolement, addiction. Jouez uniquement avec de l’argent que vous pouvez vous permettre de perdre.</p>
       </div>
-      <div class="flinks">
-        <a href="#casinos">Les casinos</a>
-        <a href="#concours">Concours</a>
-        <a href="#jeu-responsable">Jeu responsable</a>
-        <a href="#confidentialite">Confidentialité</a>
-        <a href="#conditions">Conditions</a>
+      <div>
+        <h3>Navigation</h3>
+        <div class="flinks">
+          <a href="#casinos">Les casinos</a>
+          <a href="#concours">Concours</a>
+          <a href="#partenaire">Partenaire</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h3>Informations légales</h3>
+        <div class="flinks">
+          <a href="#mentions-legales">Mentions légales</a>
+          <a href="#confidentialite">Politique de confidentialité</a>
+          <a href="#cookies">Politique de cookies</a>
+          <a href="#conditions">Conditions d’utilisation</a>
+          <a href="#jeu-responsable">Jeu responsable</a>
+          <a href="#affiliation">Affiliation</a>
+        </div>
+      </div>
+      <div>
+        <h3>Aide et contact</h3>
+        <div class="flinks">
+          <span>Joueurs Info Service</span>
+          <a href="tel:+33974751313">09 74 75 13 13</a>
+          <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener noreferrer">joueurs-info-service.fr</a>
+        </div>
       </div>
     </div>
-    <p class="copy">© 2026 Money Tox. Tous droits réservés.</p>
+    <div class="copy">
+      <p>© 2026 Money Tox. Tous droits réservés.</p>
+      <p>18+ · Jeu responsable · <a href="#affiliation">Liens affiliés</a> · Les offres peuvent changer chez l’opérateur.</p>
+    </div>
   </div>
 </footer>
 
@@ -992,12 +1110,15 @@
     window.scrollTo(0, 0);
   }
 
+  const legalIds = ["jeu-responsable", "confidentialite", "conditions", "concours", "partenaire", "mentions-legales", "cookies", "affiliation", "contact"];
+
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const id = link.getAttribute("href").slice(1);
-      if (["jeu-responsable", "confidentialite", "conditions", "concours", "partenaire"].includes(id)) {
+      if (legalIds.includes(id)) {
         event.preventDefault();
         showLegal(id);
+        history.replaceState(null, "", "#" + id);
         return;
       }
       if (link.hasAttribute("data-home") || id === "top" || id === "casinos") {
@@ -1005,6 +1126,11 @@
       }
     });
   });
+
+  const initialHash = location.hash.replace("#", "");
+  if (legalIds.includes(initialHash)) {
+    showLegal(initialHash);
+  }
 
   menuBtn.addEventListener("click", () => {
     document.body.classList.toggle("menu-open");
@@ -1061,41 +1187,17 @@
   if (location.hash.slice(1) === "partenaire") showLegal("partenaire");
 
   const partnerForm = document.getElementById("partnerForm");
-  const partnerCode = document.getElementById("partnerCode");
-  const partnerLink = document.getElementById("partnerLink");
-  function slugifyPartner(value) {
-    return value
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "")
-      .slice(0, 32);
-  }
-  function partnerUrl(code) {
-    const base = location.href.split("#")[0].split("?")[0];
-    const sep = base.indexOf("?") >= 0 ? "&" : "?";
-    return base + sep + "ref=" + encodeURIComponent(code);
-  }
-  partnerCode.addEventListener("input", () => {
-    const code = slugifyPartner(partnerCode.value);
-    partnerLink.value = code ? partnerUrl(code) : "";
-    partnerForm.querySelector('[data-error="partnerCode"]').textContent = "";
-  });
   partnerForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const code = slugifyPartner(partnerCode.value);
-    const slot = partnerForm.querySelector('[data-error="partnerCode"]');
-    if (!code) {
-      slot.textContent = "Indique un identifiant (lettres ou chiffres).";
+    const email = document.getElementById("partnerEmail").value.trim();
+    const slot = partnerForm.querySelector('[data-error="partnerEmail"]');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      slot.textContent = "Indique une adresse e-mail valide.";
       return;
     }
-    const url = partnerUrl(code);
-    partnerLink.value = url;
-    navigator.clipboard.writeText(url).then(() => {
-      partnerForm.querySelector(".btn").textContent = "Lien copié";
-      setTimeout(() => { partnerForm.querySelector(".btn").textContent = "Copier mon lien"; }, 2000);
-    });
+    slot.textContent = "";
+    const body = "Demande de lien partenaire Money Tox\n\nE-mail : " + email;
+    location.href = "mailto:moneytox3@gmail.com?subject=" + encodeURIComponent("Lien partenaire Money Tox") + "&body=" + encodeURIComponent(body);
   });
 </script>
 </body>
