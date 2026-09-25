@@ -645,7 +645,17 @@
       border-radius: 18px;
       padding: 28px;
     }
-    .contest-box.form { border-color: rgba(22,119,255,.30); background: #0d1219; }
+    .contest-box.form {
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid rgba(22,119,255,.45);
+      background:
+        radial-gradient(120% 70% at 50% -10%, rgba(22,119,255,.16) 0%, transparent 55%),
+        linear-gradient(180deg, #10141a 0%, #0a0e14 100%);
+      box-shadow: 0 12px 44px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .contest-box.form .card-bar { margin: 0; }
+    .contest-box.form .form-inner { padding: 28px; }
     .contest-box h2 { margin-top: 0; color: #fff; }
     .rule { display: flex; gap: 14px; margin-top: 18px; }
     .rule b {
@@ -726,6 +736,22 @@
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
       .menu-btn { display: grid; place-items: center; }
+      .header-inner { height: 56px; }
+      .mobile-nav { inset: 56px 0 0; }
+      #casinos { padding: 68px 0 24px; }
+      .cards { gap: 12px; }
+      .card-body { gap: 12px; padding: 16px; }
+      .mini-hub { margin-top: 16px; }
+      .game-grid { gap: 12px; margin-top: 16px; }
+      .game-hero { height: 180px; }
+      .card.gold { margin-top: 16px; }
+      .card.blackjack { margin-top: 12px; }
+      .card.blackjack.trainer { margin-top: 16px; }
+      section.criteria { padding: 16px 0 40px; }
+      .why { margin-top: 16px; gap: 12px; }
+      footer { padding: 32px 0 20px; }
+      .foot { gap: 20px; }
+      .copy { margin-top: 20px; }
       .cards, .why, .game-grid { grid-template-columns: 1fr; }
       .card.gold,
       .card.blackjack { grid-column: auto; }
@@ -1266,6 +1292,8 @@
   <h1>Reçois ton propre lien</h1>
   <p>Partage-le et perçois une commission de 20 € pour chaque personne qui s’inscrit via ton lien. Offre réservée aux majeurs. 18+ • Jeu responsable.</p>
   <div class="contest-box form" style="margin-top:28px;max-width:560px">
+    <div class="card-bar"></div>
+    <div class="form-inner">
     <h2>Ton lien</h2>
     <p>Reçois ton lien sous 48H par mail, de la part de notre équipe.</p>
     <form class="contest-form" id="partnerForm" novalidate>
@@ -1276,6 +1304,7 @@
       </div>
       <button class="btn" type="submit">Recevoir mon lien</button>
     </form>
+    </div>
   </div>
   <p style="margin-top:24px"><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
