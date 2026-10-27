@@ -13,9 +13,9 @@
     html { scroll-behavior: smooth; max-width: 100%; overflow-x: clip; }
     body { max-width: 100%; overflow-x: clip; }
     #tableau-blackjack, #mini-jeux { scroll-margin-top: 88px; }
-    .mini-hub { grid-column: 1 / -1; margin-top: 48px; }
+    .mini-hub { margin-top: 0; padding: 0; }
     .mini-hub > .kicker { color: #1677ff; font-size: 12px; }
-    .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; min-width: 0; }
+    .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; min-width: 0; }
     .game-card {
       display: flex;
       flex-direction: column;
@@ -60,13 +60,15 @@
       padding: 10px 24px;
     }
     .game-page { display: none; padding: 28px 0 80px; max-width: 1180px; }
-    .game-page .back {
+    .game-page .back,
+    .contest-page .back {
       display: inline-flex;
       min-height: 44px;
       align-items: center;
       color: #8b95a4;
       font-size: 14px;
       font-weight: 700;
+      text-decoration: none;
     }
     .game-page .kicker { margin-top: 24px; color: #1677ff; }
     .game-page h1 { margin-top: 8px; font-size: clamp(28px, 5vw, 40px); }
@@ -190,12 +192,12 @@
     h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; }
     h1 { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; }
     h1 span { color: #1677ff; }
-    section { padding: 90px 0; }
-    section.criteria { padding-top: 36px; }
+    section { padding: 32px 0; }
+    section.criteria { padding: 8px 0 24px; }
     h2 { margin-top: 8px; font-size: clamp(28px, 5vw, 46px); }
-    .muted { margin-top: 10px; color: #8b95a4; max-width: 560px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; min-width: 0; }
-    #casinos { padding: 20px 0 60px; }
+    .muted { margin-top: 6px; color: #8b95a4; max-width: 560px; }
+    .cards { display: flex; flex-direction: column; gap: 12px; align-items: stretch; min-width: 0; }
+    #casinos { padding: 16px 0 8px; }
     .card {
       --brand: #1677ff;
       --light: #7db4ff;
@@ -219,23 +221,23 @@
     .card.blue { --brand: #1677ff; --light: #7db4ff; --btn: #1677ff; }
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
     .card.gold {
-      grid-column: 3;
+      max-width: 520px;
     }
     .card.blackjack {
-      grid-column: 1 / -1;
+      width: 100%;
     }
     .card.blackjack:hover { transform: none; }
     .card.gold {
       --brand: #1677ff;
       --light: #7db4ff;
       --btn: #1677ff;
-      margin-top: 48px;
+      margin-top: 0;
     }
     .card.blackjack {
       --brand: #1677ff;
       --light: #7db4ff;
       --btn: #1677ff;
-      margin-top: 24px;
+      margin-top: 0;
     }
     .card.blackjack:not(.trainer) {
       border: 0;
@@ -731,7 +733,7 @@
     .row .btn { padding: 8px 12px; font-size: 12px; width: fit-content; }
     .row.violet .btn { background: #7c3aed; }
     .row.green .btn { background: #16a34a; }
-    .why { margin-top: 36px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; min-width: 0; }
+    .why { margin-top: 8px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; min-width: 0; }
     .why article {
       background: #0d1219;
       border: 1px solid rgba(255,255,255,.08);
@@ -779,6 +781,13 @@
     .legal ul { margin: 8px 0 0 22px; }
     .legal h2 { margin-top: 28px; font-size: 22px; }
     .legal a { color: #1677ff; text-decoration: underline; }
+    .legal a.btn,
+    .contest-page a.btn,
+    .contest-box a.btn {
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+    .contest-page { display: none; padding: 28px 0 80px; max-width: 980px; }
     .contest-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 24px; margin-top: 32px; align-items: start; }
     .contest-box {
       border: 1px solid rgba(255,255,255,.08);
@@ -888,7 +897,8 @@
       max-width: calc(100% - 32px);
       box-sizing: border-box;
       margin: 8px auto 48px;
-      border: 1px solid rgba(255,255,255,.08);
+      background: transparent;
+      border: 0;
       border-radius: 16px;
     }
     .promo-bar.promo-free .promo-bar-inner {
@@ -954,18 +964,18 @@
       .promo-bar.promo-free .promo-bar-inner { min-height: 64px; height: auto; font-size: 18px; gap: 14px; }
       .promo-bar.promo-free .join { height: 40px; padding: 0 18px; font-size: 13px; }
       .mobile-nav { inset: 56px 0 0; }
-      #casinos { padding: 16px 0 24px; }
+      #casinos { padding: 12px 0 4px; }
       .wrap { width: min(1180px, calc(100% - 32px)); }
-      .cards { gap: 12px; }
+      .cards { gap: 10px; }
       .card-body { gap: 12px; padding: 16px; }
-      .mini-hub { margin-top: 16px; }
-      .game-grid { gap: 12px; margin-top: 16px; }
+      .mini-hub { margin-top: 0; padding: 0; }
+      .game-grid { gap: 12px; margin-top: 10px; }
       .game-hero { height: 180px; }
-      .card.gold { margin-top: 16px; }
-      .card.blackjack { margin-top: 12px; }
-      .card.blackjack.trainer { margin-top: 16px; }
-      section.criteria { padding: 16px 0 40px; }
-      .why { margin-top: 16px; gap: 12px; }
+      .card.gold { margin-top: 0; }
+      .card.blackjack:not(.trainer) { margin-top: 0; }
+      .card.blackjack.trainer { margin-top: 48px; }
+      section.criteria { padding: 8px 0 24px; }
+      .why { margin-top: 8px; gap: 10px; }
       footer { padding: 32px 0 20px; }
       .foot { gap: 20px; }
       .copy { margin-top: 20px; }
@@ -1595,7 +1605,8 @@
   <p style="margin-top:24px"><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
-<article class="wrap legal" id="concours">
+<article class="wrap contest-page" id="concours">
+  <a class="back" href="#casinos" data-home>← Retour à l’accueil</a>
   <div class="contest-hero">
     <p class="kicker">Giveaway · chaque dimanche</p>
     <h1>500 € cash</h1>
@@ -1611,7 +1622,7 @@
         <h2>Inscris-toi sur Crown Slots</h2>
         <p>Clique sur le lien Money Tox, crée ton compte Crown Slots, puis dépose au minimum 50 €. Sans ça, tu n’es pas dans le tirage.</p>
         <p>Si tu es déjà inscrit, il te suffit de redéposer 50 €.</p>
-        <a class="btn" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer" style="margin-top:16px;width:100%">S’inscrire sur Crown Slots</a>
+        <a class="btn" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer" style="margin-top:16px;width:100%;color:#fff;text-decoration:none">S’inscrire sur Crown Slots</a>
       </div>
     </div>
     <div>
@@ -1790,7 +1801,7 @@
 
 <script>
   const home = document.getElementById("home");
-  const extraPages = document.querySelectorAll(".legal, .game-page");
+  const extraPages = document.querySelectorAll(".legal, .game-page, .contest-page");
   const menuBtn = document.getElementById("menuBtn");
 
   function showHome() {
@@ -1809,6 +1820,19 @@
   }
 
   const legalIds = ["jeu-responsable", "confidentialite", "conditions", "partenaire", "mentions-legales", "cookies", "affiliation", "contact", "blackjack", "roulette", "concours"];
+  const homeIds = ["top", "casinos", "tableau-blackjack", "mini-jeux"];
+
+  function applyHash() {
+    const id = location.hash.replace("#", "");
+    if (legalIds.includes(id)) {
+      showLegal(id);
+      return;
+    }
+    showHome();
+    const target = document.getElementById(id === "top" || !id ? "casinos" : id);
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -1816,14 +1840,22 @@
       if (legalIds.includes(id)) {
         event.preventDefault();
         showLegal(id);
-        history.replaceState(null, "", "#" + id);
+        history.pushState(null, "", "#" + id);
         return;
       }
-      if (link.hasAttribute("data-home") || id === "top" || id === "casinos" || id === "tableau-blackjack" || id === "mini-jeux") {
+      if (link.hasAttribute("data-home") || homeIds.includes(id)) {
+        event.preventDefault();
         showHome();
+        const hash = !id || id === "top" ? "casinos" : id;
+        history.pushState(null, "", "#" + hash);
+        const target = document.getElementById(hash);
+        if (target) target.scrollIntoView();
+        else window.scrollTo(0, 0);
       }
     });
   });
+
+  window.addEventListener("popstate", applyHash);
 
   const initialHash = location.hash.replace("#", "");
   if (legalIds.includes(initialHash)) {
