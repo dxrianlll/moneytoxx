@@ -13,7 +13,7 @@
     html { scroll-behavior: smooth; max-width: 100%; overflow-x: clip; }
     body { max-width: 100%; overflow-x: clip; }
     #tableau-blackjack, #mini-jeux { scroll-margin-top: 88px; }
-    .mini-hub { margin-top: 0; padding: 0; }
+    .mini-hub { margin-top: 10px; padding: 0; }
     .mini-hub > .kicker { color: #1677ff; font-size: 12px; }
     .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; min-width: 0; }
     .game-card {
@@ -193,11 +193,11 @@
     h1 { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; }
     h1 span { color: #1677ff; }
     section { padding: 32px 0; }
-    section.criteria { padding: 8px 0 24px; }
+    section.criteria { padding: 24px 0 24px; }
     h2 { margin-top: 8px; font-size: clamp(28px, 5vw, 46px); }
     .muted { margin-top: 6px; color: #8b95a4; max-width: 560px; }
     .cards { display: flex; flex-direction: column; gap: 12px; align-items: stretch; min-width: 0; }
-    #casinos { padding: 16px 0 8px; }
+    #casinos { padding: 16px 0 16px; }
     .card {
       --brand: #1677ff;
       --light: #7db4ff;
@@ -237,7 +237,7 @@
       --brand: #1677ff;
       --light: #7db4ff;
       --btn: #1677ff;
-      margin-top: 0;
+      margin-top: 10px;
     }
     .card.blackjack:not(.trainer) {
       border: 0;
@@ -896,7 +896,7 @@
       width: min(1180px, calc(100% - 32px));
       max-width: calc(100% - 32px);
       box-sizing: border-box;
-      margin: 8px auto 48px;
+      margin: 16px auto 48px;
       background: transparent;
       border: 0;
       border-radius: 16px;
@@ -964,17 +964,17 @@
       .promo-bar.promo-free .promo-bar-inner { min-height: 64px; height: auto; font-size: 18px; gap: 14px; }
       .promo-bar.promo-free .join { height: 40px; padding: 0 18px; font-size: 13px; }
       .mobile-nav { inset: 56px 0 0; }
-      #casinos { padding: 12px 0 4px; }
+      #casinos { padding: 12px 0 12px; }
       .wrap { width: min(1180px, calc(100% - 32px)); }
       .cards { gap: 10px; }
       .card-body { gap: 12px; padding: 16px; }
-      .mini-hub { margin-top: 0; padding: 0; }
+      .mini-hub { margin-top: 8px; padding: 0; }
       .game-grid { gap: 12px; margin-top: 10px; }
       .game-hero { height: 180px; }
       .card.gold { margin-top: 0; }
-      .card.blackjack:not(.trainer) { margin-top: 0; }
+      .card.blackjack:not(.trainer) { margin-top: 8px; }
       .card.blackjack.trainer { margin-top: 48px; }
-      section.criteria { padding: 8px 0 24px; }
+      section.criteria { padding: 20px 0 24px; }
       .why { margin-top: 8px; gap: 10px; }
       footer { padding: 32px 0 20px; }
       .foot { gap: 20px; }
