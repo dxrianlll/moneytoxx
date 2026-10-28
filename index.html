@@ -222,6 +222,8 @@
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
     .card.gold {
       max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .card.blackjack {
       width: 100%;
@@ -476,7 +478,7 @@
     .card.gold .btn:hover { background: #2f8cff; color: #fff; }
     .card.gold .kicker { color: #1677ff; margin: 0; }
     .card-bar {
-      height: 3px;
+      height: 1px;
       background: linear-gradient(90deg, transparent, var(--brand), var(--light), var(--brand), transparent);
     }
     .card-body { display: flex; flex-direction: column; gap: 16px; padding: 22px; flex: 1; }
@@ -861,6 +863,20 @@
       padding: 28px 8px;
     }
     .contest-ok h2 { color: #fff; }
+    .contest-ok-count {
+      margin-top: 20px;
+      font-family: Oswald, Inter, sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .contest-ok-hint {
+      margin-top: 4px;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
     @media (max-width: 860px) {
       .contest-grid, .contest-form .row, .casino-pick { grid-template-columns: 1fr; }
     }
@@ -1033,7 +1049,7 @@
 </header>
 <div class="promo-bar">
   <div class="wrap promo-bar-inner">
-    <span>500 € à gagner tous les dimanches</span>
+    <span>500€ à gagner tous les dimanches</span>
     <a class="join" href="#concours">Participer</a>
   </div>
 </div>
@@ -1354,7 +1370,7 @@
 
   <div class="promo-bar promo-free">
     <div class="promo-bar-inner">
-      <span>500 € à gagner tous les dimanches</span>
+      <span>500€ à gagner tous les dimanches</span>
       <a class="join" href="#concours">Participer</a>
     </div>
   </div>
@@ -1450,6 +1466,7 @@
   <ul>
     <li><strong>Journaux techniques :</strong> adresse IP, navigateur, pages visitées, date et heure.</li>
     <li><strong>Lien partenaire :</strong> l’e-mail que tu indiques pour recevoir ton lien. Aucun compte casino n’est créé ici.</li>
+    <li><strong>Participation 500€ :</strong> prénom et nom tels qu’ils figurent sur Crown Slots, et l’adresse mail (en cas de victoire).</li>
     <li><strong>E-mails que tu envoies :</strong> le contenu du message et l’adresse utilisée.</li>
   </ul>
   <p>Money Tox ne revend pas de listes de contacts.</p>
@@ -1521,27 +1538,38 @@
 
 <article class="wrap legal" id="mentions-legales">
   <h1>Mentions légales</h1>
-  <p class="updated">Mise à jour le 9 septembre 2026</p>
-  <p>Conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN), les informations suivantes identifient l’éditeur et l’hébergeur.</p>
-  <h2>Éditeur</h2>
-  <p>Money Tox est un site éditorial indépendant de comparaison de casinos en ligne. Il n’est pas un opérateur de jeux et n’ouvre aucun compte joueur.</p>
+  <p class="updated">Mise à jour le 28 octobre 2026</p>
+  <p>Conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN), voici l’identité de l’éditeur et de l’hébergeur de Money Tox.</p>
+  <h2>Le site</h2>
   <ul>
-    <li><strong>Nom public :</strong> Money Tox</li>
-    <li><strong>Nature :</strong> site d’information et de comparaison</li>
+    <li><strong>Nom :</strong> Money Tox</li>
+    <li><strong>Objet :</strong> information et comparaison éditoriale d’offres de casinos en ligne, mini-jeux d’entraînement gratuits, et tirage 500€ organisé par Money Tox</li>
     <li><strong>Contact :</strong> <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a></li>
   </ul>
+  <h2>Éditeur</h2>
+  <p>Money Tox n’est pas un opérateur de jeux d’argent, n’est pas agréé par l’Autorité nationale des jeux, et n’ouvre aucun compte joueur. Les inscriptions et dépôts se font uniquement chez Crown Slots.</p>
+  <p>Le site n’est pas exploité par une société commerciale. Il n’y a donc pas de numéro SIRET, RCS, RM ni de n° de TVA intracommunautaire à indiquer. L’éditeur est une personne physique, joignable à <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>.</p>
+  <p>L’identité civile et l’adresse postale de l’éditeur sont communiquées, sur demande écrite, aux autorités et aux personnes justifiant d’un intérêt légitime (ayants droit, administration).</p>
   <h2>Directeur de la publication</h2>
-  <p>Le directeur de la publication est l’éditeur du site Money Tox, joignable à <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>.</p>
+  <p>La direction de la publication est assurée par l’éditeur, au même contact : <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>.</p>
   <h2>Hébergement</h2>
-  <p>Le site peut être publié sur le prestataire choisi par l’éditeur (hébergeur web, GitHub Pages ou équivalent). Pour connaître l’hébergeur actuel, écris à <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>.</p>
+  <p>Le site public (fichier HTML) est prévu pour être publié via GitHub Pages.</p>
+  <ul>
+    <li><strong>Hébergeur :</strong> GitHub, Inc.</li>
+    <li><strong>Adresse :</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</li>
+    <li><strong>Site :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">https://pages.github.com</a></li>
+  </ul>
+  <p>Si une autre copie du site est mise en ligne ailleurs, l’hébergeur de cette copie est celui du prestataire choisi. Pour une confirmation écrite : <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>.</p>
   <h2>Propriété intellectuelle</h2>
-  <p>Les textes, tableaux et mises en page de Money Tox sont protégés. Les logos des casinos restent la propriété de leurs titulaires.</p>
+  <p>Les textes, tableaux, mises en page et éléments graphiques de Money Tox sont protégés. Toute reproduction non autorisée est interdite, hors copie privée et courte citation avec lien vers la source. Les logos, marques et visuels des casinos restent la propriété de leurs titulaires.</p>
   <h2>Liens affiliés</h2>
-  <p>Certains boutons mènent vers Crown Slots via des liens d’affiliation. Détails : <a href="#affiliation">page Affiliation</a>.</p>
+  <p>Les boutons vers Crown Slots sont des liens d’affiliation. Money Tox peut percevoir une rémunération si tu t’inscris ou déposes chez l’opérateur. Cela ne change pas le prix payé. Détails : <a href="#affiliation">page Affiliation</a>.</p>
   <h2>Données personnelles</h2>
-  <p>Voir la <a href="#confidentialite">politique de confidentialité</a> et la <a href="#cookies">politique cookies</a>.</p>
+  <p>L’éditeur est responsable du traitement. Les données du formulaire de participation (prénom, nom sur Crown Slots, e-mail) servent uniquement à vérifier l’éligibilité et à contacter un gagnant. Voir la <a href="#confidentialite">politique de confidentialité</a> et la <a href="#cookies">politique cookies</a>.</p>
+  <h2>Jeu d’argent</h2>
+  <p>L’accès aux casinos en ligne est réservé aux majeurs (18 ans et plus), autorisés à jouer dans leur pays. Money Tox n’accepte aucune mise. Page <a href="#jeu-responsable">Jeu responsable</a>.</p>
   <h2>Droit applicable</h2>
-  <p>Les présentes mentions sont régies par le droit français.</p>
+  <p>Les présentes mentions sont régies par le droit français. En cas de litige, après tentative de règlement amiable à <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a>, les tribunaux français sont compétents.</p>
   <p><a href="#casinos" data-home>Retour à l’accueil</a></p>
 </article>
 
@@ -1608,22 +1636,19 @@
 <article class="wrap contest-page" id="concours">
   <a class="back" href="#casinos" data-home>← Retour à l’accueil</a>
   <div class="contest-hero">
-    <p class="kicker">Giveaway · chaque dimanche</p>
-    <h1>500 € cash</h1>
+    <p class="kicker">Chaque dimanche</p>
+    <h1>500€ CASH</h1>
     <p style="margin-top:10px;font-size:22px;font-weight:800;color:#fff">à gagner</p>
-    <p class="muted" style="margin:10px auto 0">· tirage tous les dimanches à 21h</p>
+    <p class="muted" style="margin:10px auto 0">Tirage tous les dimanches à 21h</p>
     <div class="contest-count" id="contestCount"></div>
   </div>
   <div class="contest-grid">
-    <div class="contest-box form">
-      <div class="card-bar"></div>
-      <div class="form-inner">
-        <p class="kicker">Étape 1 — obligatoire</p>
-        <h2>Inscris-toi sur Crown Slots</h2>
-        <p>Clique sur le lien, crée ton compte Crown Slots, puis dépose au minimum 50 €. Sans ça, tu n’es pas dans le tirage.</p>
-        <p>Si tu es déjà inscrit, il te suffit de redéposer 50 €.</p>
-        <a class="btn" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer" style="margin-top:16px;width:100%;color:#fff;text-decoration:none">S’inscrire sur Crown Slots</a>
-      </div>
+    <div class="contest-box">
+      <p class="kicker">Étape 1 — obligatoire</p>
+      <h2>Inscris-toi sur Crown Slots</h2>
+      <p>Clique sur le lien, crée ton compte Crown Slots, puis dépose au minimum 50 €. Sans ça, tu n’es pas dans le tirage.</p>
+      <p>Si tu es déjà inscrit, il te suffit de redéposer 50 €.</p>
+      <a class="btn" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer" style="margin-top:16px;width:100%;color:#fff;text-decoration:none">S’inscrire sur Crown Slots</a>
     </div>
     <div>
       <div class="contest-box form">
@@ -1640,6 +1665,10 @@
             <label for="contestLastName">Nom sur Crown Slots</label>
             <input id="contestLastName" name="lastName" type="text" autocomplete="family-name" placeholder="Nom sur Crown Slots">
           </div>
+          <div>
+            <label for="contestEmail">Adresse mail (en cas de victoire)</label>
+            <input id="contestEmail" name="email" type="email" autocomplete="email" placeholder="Adresse mail">
+          </div>
           <div class="checks">
             <label>
               <input type="checkbox" id="contestDeposit">
@@ -1653,6 +1682,12 @@
           <div class="form-error" id="contestError"></div>
           <button class="btn" type="submit">Valider ma participation</button>
         </form>
+        <div class="contest-ok" id="contestOk">
+          <h2>Merci, c’est enregistré</h2>
+          <p>On vérifie ton inscription Crown Slots et le dépôt de 50 €. Tirage dimanche à 21h. En cas de victoire, on t’écrit à l’adresse mail que tu as indiquée.</p>
+          <p class="contest-ok-count" id="contestOkCount">15</p>
+          <p class="contest-ok-hint">Retour au formulaire</p>
+        </div>
         </div>
       </div>
       <div class="contest-box" style="margin-top:16px">
@@ -1911,20 +1946,41 @@
     tick();
     setInterval(tick, 1000);
     const form = document.getElementById("contestForm");
+    let contestOkTimer;
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       const firstName = document.getElementById("contestFirstName").value.trim();
       const lastName = document.getElementById("contestLastName").value.trim();
+      const email = document.getElementById("contestEmail").value.trim();
       const adult = document.getElementById("contestAdult").checked;
       const deposited = document.getElementById("contestDeposit").checked;
       const err = document.getElementById("contestError");
       if (firstName.length < 2) { err.textContent = "Indique ton prénom sur Crown Slots."; return; }
       if (lastName.length < 2) { err.textContent = "Indique ton nom sur Crown Slots."; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Indique une adresse mail valide."; return; }
       if (!deposited) { err.textContent = "Inscris-toi via le lien Crown Slots et dépose au moins 50 €."; return; }
       if (!adult) { err.textContent = "Le giveaway est réservé aux majeurs."; return; }
       err.textContent = "";
-      const body = "Participation giveaway Money Tox — 500 €\n\nPrénom sur Crown Slots : " + firstName + "\nNom sur Crown Slots : " + lastName + "\nInscrit via le lien Crown Slots, dépôt minimum 50 €\n18+ confirmé";
-      location.href = "mailto:contact@moneytox.fr?subject=" + encodeURIComponent("Participation 500 € Money Tox") + "&body=" + encodeURIComponent(body);
+      form.style.display = "none";
+      const ok = document.getElementById("contestOk");
+      const count = document.getElementById("contestOkCount");
+      ok.style.display = "block";
+      let left = 15;
+      count.textContent = String(left);
+      if (contestOkTimer) clearInterval(contestOkTimer);
+      contestOkTimer = setInterval(function () {
+        left -= 1;
+        if (left <= 0) {
+          clearInterval(contestOkTimer);
+          contestOkTimer = null;
+          ok.style.display = "none";
+          form.reset();
+          err.textContent = "";
+          form.style.display = "";
+          return;
+        }
+        count.textContent = String(left);
+      }, 1000);
     });
   })();
 
