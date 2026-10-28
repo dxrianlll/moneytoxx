@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Money Tox · sans Retour accueil au-dessus de Chaque dimanche -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -65,11 +66,17 @@
       display: inline-flex;
       min-height: 44px;
       align-items: center;
+      gap: 8px;
       color: #8b95a4;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
     }
+    .contest-page .back {
+      margin: 32px auto 0;
+      color: rgba(255,255,255,.45);
+    }
+    .contest-page .back:hover { color: #fff; }
     .game-page .kicker { margin-top: 24px; color: #1677ff; }
     .game-page h1 { margin-top: 8px; font-size: clamp(28px, 5vw, 40px); }
     .game-page > .lead { margin-top: 12px; color: #8b95a4; max-width: 40rem; }
@@ -789,7 +796,8 @@
       color: #fff !important;
       text-decoration: none !important;
     }
-    .contest-page { display: none; padding: 28px 0 80px; max-width: 980px; }
+    .legal, .game-page, .contest-page { display: none !important; }
+    .contest-page { padding: 28px 0 80px; max-width: 980px; }
     .contest-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 24px; margin-top: 32px; align-items: start; }
     .contest-box {
       border: 1px solid rgba(255,255,255,.08);
@@ -1634,7 +1642,6 @@
 </article>
 
 <article class="wrap contest-page" id="concours">
-  <a class="back" href="#casinos" data-home>← Retour à l’accueil</a>
   <div class="contest-hero">
     <p class="kicker">Chaque dimanche</p>
     <h1>500€ CASH</h1>
@@ -1701,7 +1708,9 @@
     </div>
   </div>
   <p style="margin-top:28px;text-align:center;color:rgba(255,255,255,.4);font-size:12px">Money Tox n’est pas un casino. Pour participer : inscription via le lien Crown Slots et dépôt minimum 50 €. Les mineurs sont exclus.</p>
-  <p style="margin-top:24px"><a href="#casinos" data-home>Retour à l’accueil</a></p>
+  <p style="text-align:center">
+    <a class="back" href="#casinos" data-home>← Retour à l’accueil</a>
+  </p>
 </article>
 
 <footer>
@@ -1841,14 +1850,14 @@
 
   function showHome() {
     home.style.display = "block";
-    extraPages.forEach((el) => el.style.display = "none");
+    extraPages.forEach((el) => el.style.setProperty("display", "none", "important"));
     document.body.classList.remove("menu-open");
   }
 
   function showLegal(id) {
     home.style.display = "none";
     extraPages.forEach((el) => {
-      el.style.display = el.id === id ? "block" : "none";
+      el.style.setProperty("display", el.id === id ? "block" : "none", "important");
     });
     document.body.classList.remove("menu-open");
     window.scrollTo(0, 0);
