@@ -4,18 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Money Tox — Comparateur de casinos en ligne</title>
+  <title>Money Tox — Crown Slots, bonus et conditions</title>
   <meta name="description" content="Money Tox présente Crown Slots. 18+ • Jeu responsable.">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <meta property="og:title" content="Money Tox — Crown Slots, bonus et conditions">
+  <meta property="og:description" content="Crown Slots, offres de premier dépôt, wager et retraits. 18+ • Jeu responsable.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/og.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; max-width: 100%; overflow-x: clip; }
+    html { max-width: 100%; overflow-x: clip; }
     body { max-width: 100%; overflow-x: clip; }
     #tableau-blackjack, #mini-jeux { scroll-margin-top: 88px; }
     .mini-hub { margin-top: 10px; padding: 0; }
-    .mini-hub > .kicker { color: #1677ff; font-size: 12px; }
+    .mini-hub > .kicker { color: rgba(255,255,255,.45); font-size: 12px; }
     .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; min-width: 0; }
     .game-card {
       display: flex;
@@ -28,7 +38,7 @@
       box-shadow: 0 2px 20px rgba(0,0,0,.6);
       transition: transform .2s, border-color .2s;
     }
-    .game-card:hover { transform: translateY(-2px); border-color: rgba(22,119,255,.5); }
+    .game-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.25); }
     .game-hero { position: relative; height: 240px; overflow: hidden; background: #0b0d12; }
     .game-hero img {
       position: absolute;
@@ -77,7 +87,7 @@
       color: rgba(255,255,255,.45);
     }
     .contest-page .back:hover { color: #fff; }
-    .game-page .kicker { margin-top: 24px; color: #1677ff; }
+    .game-page .kicker { margin-top: 24px; color: rgba(255,255,255,.45); }
     .game-page h1 { margin-top: 8px; font-size: clamp(28px, 5vw, 40px); }
     .game-page > .lead { margin-top: 12px; color: #8b95a4; max-width: 40rem; }
     .game-page .card.blackjack.trainer { margin-top: 24px; }
@@ -115,8 +125,8 @@
       display: grid; place-items: center; border-radius: 999px; font-weight: 900; font-size: 18px;
     }
     body {
-      background: #05070a;
-      color: #f4f6f8;
+      background: #040505;
+      color: #fef9e6;
       font-family: Inter, system-ui, sans-serif;
       line-height: 1.5;
     }
@@ -128,36 +138,71 @@
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
     }
-    .wrap { width: min(1180px, calc(100% - 40px)); max-width: 100%; margin: auto; box-sizing: border-box; }
+    .wrap { width: min(1240px, calc(100% - 40px)); max-width: 100%; margin: auto; box-sizing: border-box; }
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 7, 10, .82);
+      background: rgba(4, 5, 5, .85);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .header-inner {
-      height: 72px;
+      height: 76px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 16px;
     }
     .logo {
-      font-family: Oswald, Inter, sans-serif;
-      font-size: 22px;
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+    }
+    .header-prize {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      flex: 1;
+    }
+    .header-prize-copy {
+      flex: 1;
+      min-width: 0;
+      padding-left: 24px;
+      font-family: Oswald, sans-serif;
+      font-size: 18px;
       font-weight: 600;
       letter-spacing: .04em;
+      text-transform: uppercase;
+      color: #fef9e6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .logo span {
-      background: linear-gradient(105deg, #9ad0ff 0%, #1677ff 45%, #5aaeff 72%, #0a63f0 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .header-prize .join {
+      display: inline-flex;
+      align-items: center;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 6px;
+      background: #1677ff;
+      color: #fff;
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      flex-shrink: 0;
     }
-    nav { display: flex; gap: 22px; color: #8b95a4; font-size: 14px; }
-    nav a:hover { color: #fff; }
+    .header-prize .join:hover { background: #2f8cff; }
+    .logo img {
+      display: block;
+      height: 48px;
+      width: auto;
+    }
+    footer .logo img { height: 56px; }
+    nav { display: flex; gap: 22px; color: #9cafaf; font-size: 14px; }
+    nav a:hover { color: #fef9e6; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -165,12 +210,14 @@
       gap: 6px;
       background: #1677ff;
       color: #fff;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-size: 14px;
+      padding: 12px 26px;
+      border-radius: 14px;
+      font-size: 15px;
       font-weight: 700;
+      letter-spacing: .03em;
       border: 0;
       cursor: pointer;
+      box-shadow: 0 8px 24px rgba(208,67,149,.28);
     }
     .btn:hover { background: #2f8cff; }
     .btn.ghost {
@@ -190,20 +237,53 @@
       cursor: pointer;
     }
     .kicker {
-      color: #1677ff;
+      color: rgba(255,255,255,.45);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
     h1, h2, h3 { font-weight: 800; letter-spacing: -0.03em; }
-    h1 { margin-top: 18px; font-size: clamp(40px, 7vw, 64px); line-height: 1.05; }
+    h1 { margin-top: 18px; font-family: Sora, Inter, sans-serif; font-size: clamp(44px, 6.4vw, 76px); line-height: 1.02; }
     h1 span { color: #1677ff; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #1c2222;
+      padding: 48px 0 56px;
+    }
+    .hero .kicker { margin: 0; color: #9cafaf; }
+    .hero h1 {
+      margin-top: 12px;
+      max-width: 16ch;
+      font-size: clamp(44px, 6.4vw, 76px);
+    }
+    .hero .lead {
+      margin-top: 22px;
+      max-width: 480px;
+      color: #9cafaf;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .hero-pills span {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,.75);
+    }
+    .list-head { margin-bottom: 16px; }
+    .list-head h2 { margin: 8px 0 0; font-size: clamp(22px, 4vw, 28px); }
     section { padding: 32px 0; }
     section.criteria { padding: 24px 0 24px; }
     h2 { margin-top: 8px; font-size: clamp(28px, 5vw, 46px); }
     .muted { margin-top: 6px; color: #8b95a4; max-width: 560px; }
-    .cards { display: flex; flex-direction: column; gap: 12px; align-items: stretch; min-width: 0; }
+    .cards { display: flex; flex-direction: column; gap: 12px; align-items: center; min-width: 0; }
+    .play-tools .cards { align-items: stretch; }
+    section.play-tools { padding: 24px 0 32px; }
     #casinos { padding: 16px 0 16px; }
     .card {
       --brand: #1677ff;
@@ -215,22 +295,56 @@
       overflow: hidden;
       min-width: 0;
       max-width: 100%;
-      border-radius: 22px;
-      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
-      background:
-        radial-gradient(120% 70% at 50% -10%, color-mix(in srgb, var(--brand) 11%, transparent) 0%, transparent 55%),
-        linear-gradient(180deg, #17131f 0%, #100d17 100%);
-      box-shadow: 0 12px 44px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
-      transition: transform .2s;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #0c1118;
     }
-    .card:hover { transform: translateY(-6px); }
-    .card.violet { --brand: #a855f7; --light: #d8b4fe; --btn: #7c3aed; }
+    .card:hover { transform: none; }
+    .card.violet {
+      --brand: #1677ff;
+      --light: #7db4ff;
+      --btn: #1677ff;
+      max-width: 640px;
+      border-radius: 22px;
+      background: radial-gradient(120% 70% at 50% -10%, rgba(22,119,255,.11) 0%, transparent 55%), linear-gradient(180deg, #141A24 0%, #0E131A 100%);
+      border: 1px solid rgba(22,119,255,.23);
+      box-shadow: 0 12px 44px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .card.violet .card-bar { display:block; height:1px; }
+    .card.violet .offer {
+      background: radial-gradient(90% 120% at 50% 0%, rgba(22,119,255,.09), transparent 70%);
+      border: 1px solid rgba(22,119,255,.13);
+    }
+    .card.violet .offer-item {
+      background: rgba(22,119,255,.08);
+      border: 1px solid rgba(22,119,255,.23);
+    }
+    .card.violet .offer-item small { color:#7db4ff; }
+    .card.violet .rank {
+      background: rgba(22,119,255,.12);
+      border-color: rgba(22,119,255,.29);
+      color:#7db4ff;
+    }
+    .card.violet .chips span {
+      background: rgba(22,119,255,.09) !important;
+      border-color: rgba(22,119,255,.23) !important;
+      color:#7db4ff !important;
+      border-radius:999px !important;
+    }
+    .card.violet .star-row { color:#1677ff; }
+    .card.violet .tp {
+      background: rgba(22,119,255,.06);
+      border: 1px solid rgba(22,119,255,.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+
     .card.blue { --brand: #1677ff; --light: #7db4ff; --btn: #1677ff; }
     .card.green { --brand: #22c55e; --light: #4ade80; --btn: #16a34a; }
     .card.gold {
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
     .card.blackjack {
       width: 100%;
@@ -481,13 +595,15 @@
       .bj-full { display: none; }
       .bj-short { display: inline; }
     }
-    .card.gold .btn { margin-top: auto; color: #fff; }
-    .card.gold .btn:hover { background: #2f8cff; color: #fff; }
-    .card.gold .kicker { color: #1677ff; margin: 0; }
+    .card.gold .btn { margin-top: auto; }
+    .cta-gold { background: #1677ff !important; color: #fff !important; box-shadow: 0 8px 24px rgba(22,119,255,.3); }
+    .cta-gold:hover { filter: brightness(1.06); }
+    .card.gold .kicker { color: rgba(255,255,255,.45); margin: 0; }
     .card-bar {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--brand), var(--light), var(--brand), transparent);
     }
+    .card.gold .card-bar { display: none; }
     .card-body { display: flex; flex-direction: column; gap: 16px; padding: 22px; flex: 1; }
     .card-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
     .card-title { display: flex; align-items: flex-start; gap: 10px; min-width: 0; flex: 1; }
@@ -510,7 +626,7 @@
     .card.blue h3,
     .card.blackjack h3 { font-size: 26px; line-height: 1; }
     .stars { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; margin-top: 6px; color: #8b95a4; font-size: 11px; font-weight: 600; white-space: nowrap; }
-    .star-row { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 2px; color: var(--brand); }
+    .star-row { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 2px; color: #e8c547; }
     .star-row svg { display: block; flex-shrink: 0; width: 16px; height: 16px; }
     .star-row .empty { opacity: .22; }
     .rank {
@@ -519,16 +635,16 @@
       padding: 4px 12px;
       font-size: 12px;
       font-weight: 900;
-      color: var(--light);
-      background: color-mix(in srgb, var(--brand) 12%, transparent);
-      border: 1px solid color-mix(in srgb, var(--brand) 29%, transparent);
+      color: rgba(255,255,255,.7);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
     }
     .offer {
       text-align: center;
       border-radius: 16px;
       padding: 16px 14px;
-      background: radial-gradient(90% 120% at 50% 0%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 70%);
-      border: 1px solid color-mix(in srgb, var(--brand) 13%, transparent);
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.08);
     }
     .offer strong {
       display: block;
@@ -547,8 +663,8 @@
       text-align: left;
       border-radius: 14px;
       padding: 12px 14px;
-      background: color-mix(in srgb, var(--brand) 8%, transparent);
-      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
+      background: rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.08);
     }
     .offer-head {
       display: flex;
@@ -562,7 +678,7 @@
       font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--light);
+      color: rgba(255,255,255,.45);
     }
     .offer-item .wager {
       flex-shrink: 0;
@@ -597,7 +713,7 @@
       padding: 0;
       border: 0;
       background: none;
-      color: var(--light);
+      color: rgba(255,255,255,.7);
       font: inherit;
       font-size: 13px;
       font-weight: 600;
@@ -676,9 +792,9 @@
       padding: 5px 10px;
       font-size: 11px;
       font-weight: 700;
-      color: var(--light);
-      background: color-mix(in srgb, var(--brand) 9%, transparent);
-      border: 1px solid color-mix(in srgb, var(--brand) 23%, transparent);
+      color: rgba(255,255,255,.7);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
     }
     .tp {
       margin-top: auto;
@@ -689,11 +805,11 @@
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      background: color-mix(in srgb, var(--brand) 6%, transparent);
-      border: 1px solid color-mix(in srgb, var(--brand) 15%, transparent);
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.08);
       font-size: 12px;
       font-weight: 700;
-      color: var(--light);
+      color: rgba(255,255,255,.7);
       text-decoration: none;
     }
     a.tp:hover { opacity: .9; }
@@ -757,10 +873,12 @@
       gap: 12px;
       cursor: pointer;
       list-style: none;
-      padding: 12px 16px;
+      padding: 14px 16px;
     }
     .why summary::-webkit-details-marker { display: none; }
-    .why summary h3 { margin: 0; font-size: 15px; font-weight: 600; }
+    .criteria-title { font-family: Inter, sans-serif; font-size: clamp(28px, 4vw, 34px); font-weight: 600; letter-spacing: -0.03em; text-transform: none; color: #fef9e6; max-width: 22ch; line-height: 1.25; }
+    .why summary h3 { margin: 0; font-family: Inter, sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #fff; line-height: 1.35; }
+
     .why-arrow {
       flex-shrink: 0;
       width: 14px;
@@ -782,14 +900,14 @@
     }
     .why .example .kicker { margin: 0; }
     .why .example p { color: rgba(255,255,255,.7); font-size: 12px; }
-    .why a { color: #1677ff; font-weight: 600; }
+    .why a { color: #fff; font-weight: 600; }
     .legal { display: none; padding: 28px 0 80px; max-width: 680px; }
     .legal h1 { font-size: 40px; }
     .legal .updated { margin-top: 12px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
     .legal p, .legal li { margin-top: 14px; color: #8b95a4; }
     .legal ul { margin: 8px 0 0 22px; }
     .legal h2 { margin-top: 28px; font-size: 22px; }
-    .legal a { color: #1677ff; text-decoration: underline; }
+    .legal a { color: #fff; text-decoration: underline; }
     .legal a.btn,
     .contest-page a.btn,
     .contest-box a.btn {
@@ -973,7 +1091,7 @@
     .mobile-nav {
       display: none;
       position: fixed;
-      inset: 72px 0 0;
+      inset: 76px 0 0;
       background: #0d1219;
       z-index: 90;
       padding: 20px;
@@ -983,11 +1101,15 @@
     @media (max-width: 860px) {
       nav, .header-cta { display: none; }
       .menu-btn { display: grid; place-items: center; }
-      .header-inner { height: 56px; }
+      .header-inner { height: 64px; }
+      .logo img { height: 40px; }
+      .header-prize { gap: 10px; }
+      .header-prize-copy { font-size: 13px; }
+      .header-prize .join { height: 32px; padding: 0 10px; font-size: 11px; }
       .promo-bar-inner { min-height: 48px; height: auto; font-size: 14px; gap: 10px; }
       .promo-bar.promo-free .promo-bar-inner { min-height: 64px; height: auto; font-size: 18px; gap: 14px; }
       .promo-bar.promo-free .join { height: 40px; padding: 0 18px; font-size: 13px; }
-      .mobile-nav { inset: 56px 0 0; }
+      .mobile-nav { inset: 64px 0 0; }
       #casinos { padding: 12px 0 12px; }
       .wrap { width: min(1180px, calc(100% - 32px)); }
       .cards { gap: 10px; }
@@ -1036,31 +1158,158 @@
     @media (max-width: 560px) {
       .foot { grid-template-columns: 1fr; }
     }
+
+    .hero.club { border-bottom: 0; padding: 48px 0 72px; background: transparent; }
+    .tox-watermark { position:absolute; right:-4%; bottom:-18%; z-index:0; font-family:Oswald,Impact,sans-serif; font-size:min(46vw,420px); font-weight:700; line-height:.75; letter-spacing:-.06em; color:rgba(254,249,230,.045); pointer-events:none; user-select:none; }
+    .hero-grid { position:relative; z-index:1; display:block; max-width:760px; }
+    .table-kicker { font-family:Oswald,sans-serif; font-size:12px; font-weight:600; letter-spacing:.34em; color:#c9b99a; text-transform:uppercase; }
+    .hero.club h1 { font-family:Oswald,sans-serif; font-weight:600; letter-spacing:.02em; text-transform:uppercase; max-width:12ch; color:#fef9e6; }
+    .hero.club h1 span { color:#fef9e6; }
+    .hero.club .lead { color:#b7c4c4; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+    .hero.club .btn { border-radius:999px; letter-spacing:.12em; text-transform:uppercase; font-weight:800; }
+    .btn-ghost { display:inline-flex; height:54px; align-items:center; border-radius:999px; border:1px solid rgba(201,185,154,.4); padding:0 28px; font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#fef9e6; }
+    .club-poster { border:1px solid rgba(201,185,154,.22); background:#070b09; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.5); }
+    .club-poster-felt { position:relative; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at 50% 30%, #1a3a2a 0%, #0b1a14 55%, #050908 100%); }
+    .club-poster img { height:64px; width:auto; border-radius:12px; background:#fff; object-fit:contain; padding:8px; }
+    .open-pill { position:absolute; top:16px; left:16px; border-radius:999px; border:1px solid rgba(201,185,154,.5); background:rgba(0,0,0,.4); padding:4px 12px; font-family:Oswald,sans-serif; font-size:11px; letter-spacing:.22em; color:#c9b99a; text-transform:uppercase; }
+    .club-poster-body { border-top:1px solid rgba(201,185,154,.15); padding:20px 24px 80px; }
+    .club-poster-body small { display:block; font-size:11px; letter-spacing:.18em; color:#c9b99a; text-transform:uppercase; }
+    .club-poster-body h2 { margin-top:8px; font-family:Oswald,sans-serif; font-size:26px; line-height:1.05; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:#fef9e6; }
+    .hero-right { position:relative; }
+    .html-fan { position:absolute; left:50%; bottom:-8px; transform:translateX(-50%); display:flex; pointer-events:none; }
+    .html-fan i { display:flex; width:54px; height:76px; margin-left:-18px; flex-direction:column; justify-content:space-between; border-radius:8px; border:1px solid rgba(0,0,0,.12); background:#fff; padding:6px; font-weight:900; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+    .html-fan i:first-child { margin-left:0; }
+    .html-fan i.r { color:#c0392b; }
+    .html-fan i.b { color:#111; }
+    .html-fan i:nth-child(1) { transform: rotate(-28deg); }
+    .html-fan i:nth-child(2) { transform: rotate(-14deg); }
+    .html-fan i:nth-child(3) { transform: rotate(0deg); }
+    .html-fan i:nth-child(4) { transform: rotate(14deg); }
+    .html-fan i:nth-child(5) { transform: rotate(28deg); }
+    .tox-ticker { position:relative; width:100%; max-width:100%; overflow:hidden; contain:paint; isolation:isolate; border-block:1px solid rgba(255,255,255,.08); background:#080808; -webkit-mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent); mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent); }
+    .tox-ticker::before { content:""; position:absolute; inset:0 0 auto; height:1px; background:linear-gradient(90deg,transparent,#1677ff,#7db4ff,#1677ff,transparent); pointer-events:none; }
+    .tox-ticker-track { display:flex; width:max-content; max-width:none; animation:tox-marquee 18s linear infinite; }
+    .tox-ticker-row { display:flex; flex-shrink:0; align-items:center; padding:.7rem 0; }
+    .tox-ticker-item { display:inline-flex; align-items:baseline; gap:.45rem; padding:0 1.35rem; white-space:nowrap; border-right:1px solid rgba(255,255,255,.08); }
+    .tox-ticker-item i { display:inline-block; width:5px; height:5px; margin-right:.15rem; border-radius:50%; background:#1677ff; box-shadow:0 0 0 3px rgba(22,119,255,.16); animation:tox-dot 1.6s ease-in-out infinite; }
+    .tox-ticker-item em { font-style:normal; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(254,249,230,.42); }
+    .tox-ticker-item b { font-size:13px; font-weight:600; letter-spacing:-0.02em; color:#fef9e6; }
+    @keyframes tox-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @keyframes tox-dot { 0%, 100% { opacity:.55; } 50% { opacity:1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .tox-ticker { -webkit-mask-image:none; mask-image:none; }
+      .tox-ticker-item i { animation:none; opacity:1; }
+    }
+        .felt-card { border:10px solid #1c1712 !important; border-radius:6px !important; box-shadow:inset 0 0 0 1px rgba(201,185,154,.18), 0 22px 50px rgba(0,0,0,.5); }
+    .card.gold.felt-card { background:#070b09; }
+    .chip-tag, .chips span { border-radius:999px !important; border-color:rgba(201,185,154,.28) !important; color:#c9b99a !important; background:rgba(0,0,0,.35) !important; }
+    .star-row { color:#c9b99a !important; }
+    .game-card { background:#000 !important; border:1px solid rgba(255,255,255,.10) !important; box-shadow:0 2px 20px rgba(0,0,0,.6) !important; padding:0; }
+    .game-body h4 { color:#fef9e6 !important; font-family:Oswald,sans-serif; text-transform:uppercase; }
+    .game-body p { color:#9cafaf !important; }
+
+    .live-dot { display:inline-flex; align-items:center; gap:10px; font-family:Oswald,sans-serif; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:rgba(254,249,230,.55); }
+    .live-dot i { display:block; width:7px; height:7px; border-radius:50%; background:#1677ff; }
+    .member-stage { position:relative; width:min(100%,440px); margin:0 auto; }
+    .member-orbit { pointer-events:none; position:absolute; inset:-18% -10%; border:1px solid rgba(255,255,255,.08); border-radius:50%; }
+    .member-pass { position:relative; overflow:hidden; border-radius:18px; background:linear-gradient(165deg,#2c2c2c 0%,#121212 28%,#070707 100%); box-shadow:inset 0 1px 0 rgba(255,255,255,.16), 0 30px 70px rgba(0,0,0,.55); }
+    .member-spine { position:absolute; top:18px; left:10px; writing-mode:vertical-rl; rotate:180deg; font-family:Oswald,sans-serif; font-size:10px; letter-spacing:.42em; text-transform:uppercase; color:rgba(254,249,230,.28); }
+    .member-top { display:flex; justify-content:space-between; padding:18px 20px 12px 36px; font-family:Oswald,sans-serif; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:rgba(254,249,230,.55); }
+    .member-stripe { height:46px; background:repeating-linear-gradient(90deg,#0a0a0a 0 3px,#1c1c1c 3px 4px), linear-gradient(180deg,#2a2a2a,#0c0c0c); }
+    .member-body { padding:22px 22px 20px 36px; }
+    .member-body img { height:48px; width:auto; border-radius:6px; background:#fff; object-fit:contain; padding:6px; }
+    .member-kicker { margin-top:16px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(254,249,230,.45); }
+    .member-offer { margin-top:8px; font-family:Oswald,sans-serif; font-size:26px; font-weight:600; line-height:1.1; letter-spacing:.03em; text-transform:uppercase; color:#fef9e6; }
+    .member-micro { margin-top:14px; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(254,249,230,.28); }
+    .hero.club h1 { -webkit-text-fill-color:unset; background:none; color:#fef9e6; }
+
+    .promo-bar { border-color: rgba(201,185,154,.15); background:#070b09; }
+    .promo-bar.promo-free { border:0; background:transparent; border-radius:0; }
+    header { background: #050505 !important; border-bottom-color: rgba(255,255,255,.10) !important; }
+
+
+
+
+    .display-125 { font-family:Oswald,Impact,sans-serif; font-size:clamp(92px,22vw,220px); font-weight:700; line-height:.78; letter-spacing:-.07em; text-transform:uppercase; color:#fef9e6; }
+    .hero-sub { font-family:Oswald,sans-serif; font-size:clamp(28px,5vw,48px); font-weight:600; text-transform:uppercase; letter-spacing:.01em; color:#fef9e6; margin-top:12px; max-width:18ch; }
+    .hero.club h1.display-125 { background:none; -webkit-text-fill-color:#fef9e6; color:#fef9e6; max-width:none; }
+    .hero-grid { display:block; }
+    .card.gold.felt-card { border:1px solid rgba(255,255,255,.12) !important; background:rgba(0,0,0,.55) !important; }
+
+
+    .hero-line { display:flex; flex-wrap:wrap; gap:.28em; font-family:Oswald,sans-serif; font-size:clamp(42px,7vw,68px); font-weight:600; line-height:.95; letter-spacing:.02em; text-transform:uppercase; color:#fef9e6; }
+    .hero.club h1.hero-line { background:none; -webkit-text-fill-color:#fef9e6; max-width:none; font-size:clamp(42px,7vw,68px); }
+    .hero-sub { font-family:Oswald,sans-serif; font-size:24px; font-weight:600; text-transform:uppercase; color:#fef9e6; margin-top:12px; }
+
+    .hero-grid { display:block; max-width:880px; }
+
+    .hero.club h1 { max-width: 20ch; text-transform: none; letter-spacing: -0.03em; font-family: Inter, sans-serif; font-size: clamp(32px, 5vw, 44px); line-height: 1.22; font-weight: 600; }
+    .hero.club h1 .acc { color:#1677ff; }
+    .hero-kicker { font-family: Oswald, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color:#1677ff; }
+    .hero.club .lead { max-width: 640px; font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.65); }
+    .hero-legal { margin-top: 28px; max-width: 560px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.40); }
+    .trust-strip { border-block: 1px solid rgba(255,255,255,.08); background: #070808; padding: 36px 0; }
+    .trust-grid { display: grid; gap: 28px; }
+    @media (min-width: 760px) { .trust-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .trust-grid small { display:block; font-family: Oswald, sans-serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color:#1677ff; }
+    .trust-grid p { margin-top: 12px; font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.55); }
+    .why { padding: 64px 0; }
+    .why h2 { font-family: Sora, Inter, sans-serif; font-size: clamp(28px, 4vw, 36px); text-transform: none; letter-spacing: -0.02em; }
+    .why .lead { margin-top: 16px; color: rgba(255,255,255,.55); }
+    .why-list { margin-top: 36px; border-block: 1px solid rgba(255,255,255,.08); }
+    .why-row { display:grid; gap: 8px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .why-row:last-child { border-bottom: 0; }
+    @media (min-width: 640px) { .why-row { grid-template-columns: 200px 1fr; gap: 32px; } }
+    .why-row strong { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color:#1677ff; }
+    .why-row span { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,.70); }
+    .why .micro { margin-top: 28px; font-size: 13px; color: rgba(255,255,255,.40); }
+
+
+    .list-head { display:none; }
+    .sheet { overflow:hidden; background:#0a0a0a; border-radius:8px; border-top:1px solid rgba(255,255,255,.10); border-bottom:1px solid rgba(255,255,255,.10); border-left:6px solid #1677ff; border-right:6px solid #1677ff; color:#fff; }
+    .sheet-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,.10); }
+    .sheet-brand { display:flex; align-items:center; gap:14px; min-width:0; }
+    .sheet-brand img { height:40px; width:auto; background:#fff; border-radius:6px; padding:6px 10px; }
+    .sheet-brand small { display:block; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.40); }
+    .sheet-brand strong { display:block; font-size:18px; font-weight:600; color:#fff; }
+    .sheet-tp { font-size:13px; color:rgba(255,255,255,.45); }
+    .sheet-cols { display:grid; }
+    @media (min-width:760px) { .sheet-cols { grid-template-columns:1fr 1fr; } .sheet-col + .sheet-col { border-left:1px solid rgba(255,255,255,.10); } }
+    .sheet-col { padding:28px; border-bottom:1px solid rgba(255,255,255,.10); }
+    @media (min-width:760px) { .sheet-col { border-bottom:0; } }
+    .sheet-col small { display:block; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.40); }
+    .sheet-col h3 { margin:12px 0 22px; font-family:Inter,sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:-.02em; color:#fff; text-transform:none; }
+    .sheet-row { display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.08); font-size:13px; }
+    .sheet-row span { color:rgba(255,255,255,.45); }
+    .sheet-row b { font-weight:500; color:#fff; }
+    .sheet .bonus-link { color:#1677ff; }
+    .sheet-foot { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:20px 28px; border-top:1px solid rgba(255,255,255,.10); background:transparent; }
+    .sheet-foot p { max-width:540px; font-size:12px; line-height:1.6; color:rgba(255,255,255,.40); }
+    .sheet-foot a.terms { color:rgba(255,255,255,.55); }
+    .sheet .btn.cta-gold { background:#1677ff !important; color:#fff !important; }
+
+
   </style>
 </head>
 <body>
 <header>
   <div class="wrap header-inner">
-    <a href="#casinos" class="logo" data-home>
-      MONEY <span>TOX</span>
+    <a href="#top" class="logo" data-home>
+      <img src="/logo.png" alt="Money Tox" width="188" height="160">
     </a>
-    <div class="header-end">
+    <div class="header-prize">
+      <a href="#concours" class="header-prize-copy">500€ à gagner tous les dimanches</a>
       <nav>
         <a href="#casinos">Crown Slots</a>
         <a href="#tableau-blackjack">Tableau blackjack</a>
         <a href="#mini-jeux">Mini jeux</a>
       </nav>
-      <a href="#casinos" class="btn header-cta">Voir la sélection</a>
+      <a class="join" href="#concours">Participer</a>
       <button class="menu-btn" type="button" aria-label="Menu" id="menuBtn">☰</button>
     </div>
   </div>
 </header>
-<div class="promo-bar">
-  <div class="wrap promo-bar-inner">
-    <span>500€ à gagner tous les dimanches</span>
-    <a class="join" href="#concours">Participer</a>
-  </div>
-</div>
 
 <div class="mobile-nav" id="mobileNav">
   <a href="#casinos">Crown Slots</a>
@@ -1074,22 +1323,54 @@
 </div>
 
 <div id="home">
+  <section class="hero club">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>CrownSlots : le casino à découvrir en <span class="acc">2026</span></h1>
+        <p class="lead">Deux offres de premier dépôt : 125 % jusqu’à 1 000 € + 100 free spins, ou 100 % jusqu’à 5 000 €. Wager x40 sur les deux. Les montants, le plafond et le calculateur sont sur la fiche, juste en dessous.</p>
+        <div class="hero-actions">
+          <a class="btn cta-gold" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">Découvrir CrownSlots</a>
+          <a class="btn-ghost" href="#bonus">Analyser le bonus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="tox-ticker">
+    <div class="tox-ticker-track" aria-hidden="true">
+      <div class="tox-ticker-row">
+        <span class="tox-ticker-item"><i></i><em>Crown Slots</em><b>3,4 / 5</b></span>
+        <span class="tox-ticker-item"><i></i><em>Offre 1</em><b>125 % · 1 000 € + 100 FS</b></span>
+        <span class="tox-ticker-item"><i></i><em>Offre 2</em><b>100 % · 5 000 €</b></span>
+        <span class="tox-ticker-item"><i></i><em>Wager</em><b>x40</b></span>
+        <span class="tox-ticker-item"><i></i><em>Retraits</em><b>souvent 48 h</b></span>
+        <span class="tox-ticker-item"><i></i><em>Concours</em><b>500 € · dimanche 21 h</b></span>
+        <span class="tox-ticker-item"><i></i><em>18+</em><b>jeu responsable</b></span>
+      </div>
+      <div class="tox-ticker-row">
+        <span class="tox-ticker-item"><i></i><em>Crown Slots</em><b>3,4 / 5</b></span>
+        <span class="tox-ticker-item"><i></i><em>Offre 1</em><b>125 % · 1 000 € + 100 FS</b></span>
+        <span class="tox-ticker-item"><i></i><em>Offre 2</em><b>100 % · 5 000 €</b></span>
+        <span class="tox-ticker-item"><i></i><em>Wager</em><b>x40</b></span>
+        <span class="tox-ticker-item"><i></i><em>Retraits</em><b>souvent 48 h</b></span>
+        <span class="tox-ticker-item"><i></i><em>Concours</em><b>500 € · dimanche 21 h</b></span>
+        <span class="tox-ticker-item"><i></i><em>18+</em><b>jeu responsable</b></span>
+      </div>
+    </div>
+  </div>
   <section id="casinos">
     <div class="wrap">
-      <h1 class="sr-only">Money Tox — Crown Slots</h1>
       <div class="cards">
-        <article class="card violet">
+                        <article class="card violet" id="bonus">
           <div class="card-bar"></div>
           <div class="card-body">
             <div class="card-head">
               <div class="card-title">
-                <img class="casino-logo casino-logo-white" src="data:image/png;base64,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" alt="Crown Slots" width="52" height="52">
+                <img class="casino-logo casino-logo-white" src="/casinos/crown-slots.png" alt="Crown Slots" width="52" height="52">
                 <div>
                   <h3>Crown Slots</h3>
-                  <div class="stars" aria-label="Note Trustpilot 3,4 sur 5"><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span> 3,4/5</div>
+                  <div class="stars" aria-label="Note Trustpilot 3,4 sur 5"><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span> 3,4/5</div>
                 </div>
               </div>
-              <span class="rank">N°1</span>
             </div>
             <div class="offer">
               <div class="offer-list">
@@ -1114,14 +1395,20 @@
               </div>
             </div>
             <div class="chips">
-              <span>Retraits souvent sous 48 h</span>
+              <span>Retraits souvent traités sous 48 h</span>
               <span>Dépôt minimum 20 €</span>
               <span>Plusieurs moyens de paiement</span>
             </div>
-            <a class="tp" href="https://www.trustpilot.com/review/crownslots.com" target="_blank" rel="noopener noreferrer" aria-label="Avis Trustpilot Crown Slots"><span>Trustpilot</span><span class="tp-score"><em>3,4 / 5</em><span class="star-row" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg><svg class="empty" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2.2 14.7 8l6.6.6-5 4.4 1.5 6.4L12 16.3 6.2 19.4l1.5-6.4-5-4.4L9.3 8z"/></svg></span></span></a>
-            <a class="btn" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">Voir l’offre →</a>
+            <a class="tp" href="https://www.trustpilot.com/review/crownslots.com" target="_blank" rel="noopener noreferrer" aria-label="Avis Trustpilot Crown Slots"><span>Trustpilot</span><span class="tp-score"><em>3,4 / 5</em></span></a>
+            <a class="btn cta-gold" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">Jouer</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+  <section class="play-tools">
+    <div class="wrap">
+      <div class="cards">
         <article class="card blackjack" id="tableau-blackjack">
           <div class="card-bar"></div>
           <div class="card-body">
@@ -1222,24 +1509,24 @@
 
   <section class="criteria">
     <div class="wrap">
-      <p class="kicker">Les critères qui comptent vraiment</p>
+      <h2 class="criteria-title">Les critères qui comptent vraiment</h2>
       <div class="why">
         <article>
           <details>
             <summary>
-              <h3>Un seul casino, deux offres claires</h3>
+              <h3>Les deux offres</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
               <p>Money Tox présente Crown Slots et détaille ses deux offres de premier dépôt. Chaque bonus est expliqué à part : ce que tu peux obtenir, les conditions à respecter, et ce qui change d’une offre à l’autre.</p>
-              <p>On privilégie la clarté plutôt qu’une liste de casinos sans explication. Les montants, le plafond et le calculateur restent sur la fiche Crown Slots, juste au-dessus.</p>
+              <p>On privilégie la clarté plutôt qu’une liste de casinos sans explication. Les montants, le plafond et le calculateur restent sur la fiche Crown Slots.</p>
             </div>
           </details>
         </article>
         <article>
           <details>
             <summary>
-              <h3>Comprendre les deux bonus</h3>
+              <h3>Les bonus</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1261,7 +1548,7 @@
         <article>
           <details>
             <summary>
-              <h3>Wager x40</h3>
+              <h3>Le wager</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1284,7 +1571,7 @@
         <article>
           <details>
             <summary>
-              <h3>Les 100 free spins</h3>
+              <h3>Les free spins</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1304,7 +1591,7 @@
         <article>
           <details>
             <summary>
-              <h3>Durée de validité</h3>
+              <h3>La validité</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1323,7 +1610,7 @@
         <article>
           <details>
             <summary>
-              <h3>Retraits : vérifier avant de déposer</h3>
+              <h3>Les retraits</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1343,7 +1630,7 @@
         <article>
           <details>
             <summary>
-              <h3>Des infos vérifiables</h3>
+              <h3>Les sources</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1363,7 +1650,7 @@
         <article>
           <details>
             <summary>
-              <h3>Réservé aux majeurs</h3>
+              <h3>18 ans et plus</h3>
               <svg class="why-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="why-body">
@@ -1525,10 +1812,10 @@
 
 <article class="wrap legal" id="conditions">
   <h1>Conditions d’utilisation</h1>
-  <p class="updated">Mise à jour le 9 septembre 2026</p>
-  <p>En consultant Money Tox, tu acceptes ces conditions. Money Tox est un comparateur indépendant. Aucun compte joueur n’est ouvert ici.</p>
+  <p class="updated">Mise à jour le 29 octobre 2026</p>
+  <p>En consultant Money Tox, tu acceptes ces conditions. Money Tox est un site d’information indépendant. Aucun compte joueur n’est ouvert ici.</p>
   <h2>Objet du site</h2>
-  <p>Money Tox publie une sélection courte de casinos, des informations sur les offres, un tableau de blackjack et un programme partenaire.</p>
+  <p>Money Tox présente Crown Slots, des informations sur ses offres, un tableau de blackjack et un programme partenaire.</p>
   <h2>Accès et âge</h2>
   <p>Le contenu s’adresse exclusivement aux personnes de 18 ans et plus, autorisées à jouer dans leur pays. Les mineurs n’ont pas le droit de s’inscrire chez un opérateur.</p>
   <h2>Contenu éditorial</h2>
@@ -1546,12 +1833,12 @@
 
 <article class="wrap legal" id="mentions-legales">
   <h1>Mentions légales</h1>
-  <p class="updated">Mise à jour le 28 octobre 2026</p>
+  <p class="updated">Mise à jour le 29 octobre 2026</p>
   <p>Conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN), voici l’identité de l’éditeur et de l’hébergeur de Money Tox.</p>
   <h2>Le site</h2>
   <ul>
     <li><strong>Nom :</strong> Money Tox</li>
-    <li><strong>Objet :</strong> information et comparaison éditoriale d’offres de casinos en ligne, mini-jeux d’entraînement gratuits, et tirage 500€ organisé par Money Tox</li>
+    <li><strong>Objet :</strong> information éditoriale sur Crown Slots, mini-jeux d’entraînement gratuits, et tirage 500€ organisé par Money Tox</li>
     <li><strong>Contact :</strong> <a href="mailto:contact@moneytox.fr">contact@moneytox.fr</a></li>
   </ul>
   <h2>Éditeur</h2>
@@ -1717,8 +2004,8 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="logo">MONEY <span>TOX</span></div>
-        <p>Comparateur éditorial de casinos en ligne. Money Tox n’est pas un opérateur de jeux. Aucun compte joueur n’est ouvert ici.</p>
+        <div class="logo"><img src="/logo.png" alt="Money Tox" width="188" height="160"></div>
+        <p>Money Tox présente Crown Slots et décortique ses offres de premier dépôt. Ce n’est pas un opérateur de jeux. Aucun compte joueur n’est ouvert ici.</p>
         <p>Jouer comporte des risques : endettement, isolement, addiction. Jouez uniquement avec de l’argent que vous pouvez vous permettre de perdre.</p>
         <p class="age-badge">18+ Interdit aux mineurs</p>
       </div>
@@ -1873,7 +2160,11 @@
       return;
     }
     showHome();
-    const target = document.getElementById(id === "top" || !id ? "casinos" : id);
+    if (!id || id === "top") {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const target = document.getElementById(id);
     if (target) target.scrollIntoView();
     else window.scrollTo(0, 0);
   }
@@ -1881,6 +2172,15 @@
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const id = link.getAttribute("href").slice(1);
+      if (id === "bonus") {
+        const target = document.getElementById("bonus");
+        if (!target) return;
+        event.preventDefault();
+        showHome();
+        history.replaceState(null, "", location.pathname + location.search);
+        target.scrollIntoView();
+        return;
+      }
       if (legalIds.includes(id)) {
         event.preventDefault();
         showLegal(id);
@@ -1890,11 +2190,14 @@
       if (link.hasAttribute("data-home") || homeIds.includes(id)) {
         event.preventDefault();
         showHome();
-        const hash = !id || id === "top" ? "casinos" : id;
-        history.pushState(null, "", "#" + hash);
-        const target = document.getElementById(hash);
-        if (target) target.scrollIntoView();
-        else window.scrollTo(0, 0);
+        const hash = !id || id === "top" ? "top" : id;
+        history.pushState(null, "", hash === "top" ? "#" : "#" + hash);
+        if (hash === "top") window.scrollTo(0, 0);
+        else {
+          const target = document.getElementById(hash);
+          if (target) target.scrollIntoView();
+          else window.scrollTo(0, 0);
+        }
       }
     });
   });
@@ -1904,6 +2207,11 @@
   const initialHash = location.hash.replace("#", "");
   if (legalIds.includes(initialHash)) {
     showLegal(initialHash);
+  } else if (!initialHash || initialHash === "top" || initialHash === "bonus") {
+    if (initialHash === "bonus" || initialHash === "top") {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
   }
 
   menuBtn.addEventListener("click", () => {
@@ -2703,5 +3011,7 @@
     render();
   })();
 </script>
+
+
 </body>
 </html>
