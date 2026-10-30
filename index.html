@@ -1822,7 +1822,7 @@
         <p class="bjt-line" id="bjtLine" aria-live="polite">Pose tes jetons. Je distribue ensuite.</p>
         <div id="bjtPlayer"></div>
       </div>
-      <div id="bjtCoach" class="bjt-coach idle">Chaque choix est compar&#233; au tableau, sans argent r&#233;el.</div>
+      <div id="bjtCoach" class="bjt-coach idle" hidden></div>
       <div id="bjtControls"></div>
     </div>
   </article>
@@ -2618,15 +2618,18 @@
       }
       const net = state.settlements.reduce((sum, item) => sum + item.delta, 0);
       if (state.coach) {
+        coach.hidden = false;
         coach.className = "bjt-coach " + (state.coach.ok ? "ok" : "bad");
         coach.textContent = state.coach.text;
       } else {
-        coach.className = "bjt-coach idle";
-        coach.textContent = state.scoreTotal === 0
-          ? "Chaque choix est compar\u00e9 au tableau, sans argent r\u00e9el."
+        const idleText = state.scoreTotal === 0
+          ? ""
           : state.phase === "done" && net !== 0
             ? "R\u00e9sultat de la main : " + (net > 0 ? "+" : "") + euro(net) + "."
             : "Joue comme \u00e0 la table. Le croupier applique les r\u00e8gles du tableau.";
+        coach.className = "bjt-coach idle";
+        coach.textContent = idleText;
+        coach.hidden = !idleText;
       }
       const broke = state.bank < 10 && state.phase === "bet";
       const busy = state.phase === "deal" || state.phase === "dealer";
