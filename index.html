@@ -1284,15 +1284,12 @@
       font-weight: 800;
       font-style: normal;
       text-wrap: balance;
-      background-image: linear-gradient(105deg, #9ec8ff 0%, #1677ff 32%, #7db4ff 52%, #4c8dff 74%, #9ec8ff 100%);
-      background-size: 220% 100%;
-      background-position: 0% 50%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      animation: hero-crown-flow 5s ease-in-out infinite;
+      background: none;
+      color: #fff;
+      -webkit-text-fill-color: #fff;
+      animation: none;
     }
+    .hero.club h1 span { color: #1677ff; -webkit-text-fill-color: #1677ff; }
     @keyframes hero-crown-flow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -1301,8 +1298,8 @@
     .hero.club h1 .tag, .hero.club h1 .acc { color: inherit; }
     .hero-kicker { font-family: Oswald, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color:#1677ff; }
     .hero.club .lead { max-width: 640px; font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.65); }
-    .hero.club .lead a { color: #1677ff; font: inherit; letter-spacing: inherit; }
-    .hero.club .lead a:hover { color: #4c8dff; }
+    .hero.club .lead a { color: rgba(255,255,255,.65); font: inherit; letter-spacing: inherit; text-decoration: underline; text-underline-offset: .18em; }
+    .hero.club .lead a:hover { color: rgba(255,255,255,.65); }
     .hero-legal { margin-top: 28px; max-width: 560px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.40); }
     .trust-strip { border-block: 1px solid rgba(255,255,255,.08); background: #070808; padding: 36px 0; }
     .trust-grid { display: grid; gap: 28px; }
@@ -1442,7 +1439,7 @@
   <section class="hero club">
     <div class="wrap hero-grid">
       <div>
-        <h1>Le meilleur<br/>casino pour fran&#231;ais en 2026.</h1>
+        <h1>Le meilleur<br/><span>casino</span> pour fran&#231;ais en 2026.</h1>
         <p class="lead">&#192; la recherche d&#8217;un nouveau casino en ligne&nbsp;? D&#233;couvre <a href="#bonus">CrownSlots</a>, explore ses offres, ses jeux et profite de notre analyse compl&#232;te pour conna&#238;tre tous les d&#233;tails.</p>
         <div class="hero-actions">
           <a class="btn-ghost" href="#tableau-blackjack">Tableau blackjack</a>
