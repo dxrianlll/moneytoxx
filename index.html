@@ -23,7 +23,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { max-width: 100%; overflow-x: clip; }
     body { max-width: 100%; overflow-x: clip; }
-    #tableau-blackjack, #mini-jeux { scroll-margin-top: 88px; }
+    #tableau-blackjack, #mini-jeux, #bonus { scroll-margin-top: 88px; }
     .mini-hub { margin-top: 10px; padding: 0; }
     .mini-hub > .kicker { color: rgba(255,255,255,.45); font-size: 12px; }
     .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; min-width: 0; }
@@ -91,6 +91,7 @@
     .game-page h1 { margin-top: 8px; font-size: clamp(28px, 5vw, 40px); }
     .game-page > .lead { margin-top: 12px; color: #8b95a4; max-width: 40rem; }
     .game-page .card.blackjack.trainer { margin-top: 24px; }
+    .game-page .game-play { margin-top: 20px; }
     .rl-hud { display: flex; flex-wrap: wrap; gap: 8px; }
     .rl-wheel-wrap { position: relative; width: min(280px, 100%); aspect-ratio: 1; margin: 12px auto 0; }
     .rl-pointer {
@@ -1300,6 +1301,8 @@
     .hero.club h1 .tag, .hero.club h1 .acc { color: inherit; }
     .hero-kicker { font-family: Oswald, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color:#1677ff; }
     .hero.club .lead { max-width: 640px; font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.65); }
+    .hero.club .lead a { color: #1677ff; font: inherit; letter-spacing: inherit; }
+    .hero.club .lead a:hover { color: #4c8dff; }
     .hero-legal { margin-top: 28px; max-width: 560px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.40); }
     .trust-strip { border-block: 1px solid rgba(255,255,255,.08); background: #070808; padding: 36px 0; }
     .trust-grid { display: grid; gap: 28px; }
@@ -1440,10 +1443,10 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Le meilleur<br/>casino pour fran&#231;ais en 2026.</h1>
-        <p class="lead">&#192; la recherche d&#8217;un nouveau casino en ligne&nbsp;? D&#233;couvre CrownSlots, explore ses offres, ses jeux et profite de notre analyse compl&#232;te pour conna&#238;tre tous les d&#233;tails.</p>
+        <p class="lead">&#192; la recherche d&#8217;un nouveau casino en ligne&nbsp;? D&#233;couvre <a href="#bonus">CrownSlots</a>, explore ses offres, ses jeux et profite de notre analyse compl&#232;te pour conna&#238;tre tous les d&#233;tails.</p>
         <div class="hero-actions">
-          <a class="btn cta-gold" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">D&#233;couvrir CrownSlots</a>
-          <a class="btn-ghost" href="#bonus">Analyser le bonus</a>
+          <a class="btn-ghost" href="#tableau-blackjack">Tableau blackjack</a>
+          <a class="btn-ghost" href="#blackjack">Entra&#238;ne-toi gratuitement au BJ</a>
         </div>
       </div>
     </div>
@@ -1793,6 +1796,7 @@
   <p class="kicker">Mini jeux</p>
   <h1>Blackjack</h1>
   <p class="lead">Entra&#238;ne-toi gratuitement</p>
+  <a class="btn-ghost game-play" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">Jouer sur CrownSlots</a>
   <article class="card blackjack trainer">
     <div class="card-bar"></div>
     <div class="card-body">
@@ -1813,6 +1817,7 @@
   <p class="kicker">Mini jeux</p>
   <h1>Roulette</h1>
   <p class="lead">Mode d&#233;mo &#8212; tes jetons ne valent rien. Aucun d&#233;p&#244;t, aucun gain r&#233;el. 18+ &#183; jeu responsable.</p>
+  <a class="btn-ghost game-play" href="https://crownslotslink.com/hsawvfqby" target="_blank" rel="sponsored noopener noreferrer">Jouer sur CrownSlots</a>
   <article class="card blackjack trainer">
     <div class="card-bar"></div>
     <div class="card-body">
