@@ -1009,6 +1009,25 @@
     .contest-form .btn { width: 100%; background: #1677ff; color: #fff; font-weight: 900; }
     .contest-form .btn:hover { background: #2f8cff; }
     .field-error, .form-error { color: #f87171; font-size: 13px; margin-top: 6px; }
+    .contest-wait {
+      display: none;
+      text-align: center;
+      padding: 36px 8px 28px;
+    }
+    .contest-spin {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.15);
+      border-top-color: #1677ff;
+      animation: contest-spin .8s linear infinite;
+    }
+    .contest-wait p { margin-top: 16px; color: rgba(255,255,255,.65); font-size: 14px; }
+    @keyframes contest-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .contest-spin { animation: none; }
+    }
     .contest-ok {
       display: none;
       text-align: center;
@@ -2068,8 +2087,12 @@
           <div class="form-error" id="contestError"></div>
           <button class="btn" type="submit">Valider ma participation</button>
         </form>
+        <div class="contest-wait" id="contestWait" aria-live="polite">
+          <div class="contest-spin" aria-hidden="true"></div>
+          <p>Enregistrement en cours&#8230;</p>
+        </div>
         <div class="contest-ok" id="contestOk">
-          <h2>Merci, c&#8217;est enregistr&#233;</h2>
+          <h2>Merci c&#8217;est enregistr&#233;</h2>
           <p>On v&#233;rifie ton inscription Crown Slots et le d&#233;p&#244;t de 50 &#8364;. Tirage dimanche &#224; 21h. En cas de victoire, on t&#8217;&#233;crit &#224; l&#8217;adresse mail que tu as indiqu&#233;e.</p>
           <p class="contest-ok-count" id="contestOkCount">15</p>
           <p class="contest-ok-hint">Retour au formulaire</p>
@@ -2353,26 +2376,37 @@
       if (!deposited) { err.textContent = "Inscris-toi via le lien Crown Slots et d\u00e9pose au moins 50 \u20ac."; return; }
       if (!adult) { err.textContent = "Le giveaway est r\u00e9serv\u00e9 aux majeurs."; return; }
       err.textContent = "";
+      if (form.dataset.pending === "1") return;
+      form.dataset.pending = "1";
+      const submitBtn = form.querySelector("button[type=submit]");
+      if (submitBtn) submitBtn.disabled = true;
       form.style.display = "none";
+      const wait = document.getElementById("contestWait");
       const ok = document.getElementById("contestOk");
-      const count = document.getElementById("contestOkCount");
-      ok.style.display = "block";
-      let left = 15;
-      count.textContent = String(left);
-      if (contestOkTimer) clearInterval(contestOkTimer);
-      contestOkTimer = setInterval(function () {
-        left -= 1;
-        if (left <= 0) {
-          clearInterval(contestOkTimer);
-          contestOkTimer = null;
-          ok.style.display = "none";
-          form.reset();
-          err.textContent = "";
-          form.style.display = "";
-          return;
-        }
+      wait.style.display = "block";
+      setTimeout(function () {
+        wait.style.display = "none";
+        form.dataset.pending = "";
+        if (submitBtn) submitBtn.disabled = false;
+        const count = document.getElementById("contestOkCount");
+        ok.style.display = "block";
+        let left = 15;
         count.textContent = String(left);
-      }, 1000);
+        if (contestOkTimer) clearInterval(contestOkTimer);
+        contestOkTimer = setInterval(function () {
+          left -= 1;
+          if (left <= 0) {
+            clearInterval(contestOkTimer);
+            contestOkTimer = null;
+            ok.style.display = "none";
+            form.reset();
+            err.textContent = "";
+            form.style.display = "";
+            return;
+          }
+          count.textContent = String(left);
+        }, 1000);
+      }, 3000);
     });
   })();
 
