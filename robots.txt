@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moneytox.fr/sitemap.xml
+Sitemap: https://www.moneytox.fr/sitemap.xml
